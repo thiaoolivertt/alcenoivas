@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AlceNoivas — Vestidos de Noiva</title>
 <script>document.documentElement.classList.add("js");</script>
-<meta name="description" content="AlceNoivas: vestidos de noiva e ternos masculinos para o seu casamento. Agende sua prova pelo WhatsApp.">
+<meta name="description" content="AlceNoivas: vestidos de noiva, vestidos de madrinha e ternos masculinos para o seu casamento. Agende sua prova pelo WhatsApp.">
 <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook).
      Depois de publicar o site, troque og:image pelo endereço completo, ex.: https://www.seudominio.com.br/logo.png -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="AlceNoivas">
-<meta property="og:title" content="AlceNoivas — Vestidos de noiva e ternos">
-<meta property="og:description" content="Vestidos de noiva e ternos masculinos. Agende sua prova pelo WhatsApp.">
+<meta property="og:title" content="AlceNoivas — Noivas, madrinhas e ternos">
+<meta property="og:description" content="Vestidos de noiva, vestidos de madrinha e ternos masculinos. Agende sua prova pelo WhatsApp.">
 <meta property="og:url" content="https://thiaoolivertt.github.io/alcenoivas/">
 <meta property="og:image" content="https://thiaoolivertt.github.io/alcenoivas/logo.png">
 <meta name="theme-color" content="#2f2f33">
@@ -147,7 +147,7 @@
 
   /* Serviços */
   .servicos { background: var(--creme); }
-  .servicos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 60px; }
+  .servicos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
   .servico {
     position: relative; background: var(--branco); padding: clamp(36px, 5vw, 56px); border: 1px solid var(--areia);
     transition: transform .35s, box-shadow .35s; overflow: hidden;
@@ -157,7 +157,8 @@
   .servico:hover::before { transform: scaleX(1); }
   .servico .num { font-family: var(--serif); font-style: italic; font-size: 3.4rem; line-height: 1; color: var(--rose-claro); }
   .servico h3 { font-size: 1.9rem; margin: 14px 0 12px; }
-  .servico p { color: var(--tinta-suave); margin-bottom: 26px; }
+  .servico { display: flex; flex-direction: column; align-items: flex-start; }
+  .servico p { color: var(--tinta-suave); margin-bottom: 26px; flex: 1; }
   .link-seta { font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; color: var(--rose-escuro); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
   .link-seta::after { content: " →"; transition: margin .3s; }
   .link-seta:hover::after { margin-left: 6px; }
@@ -297,10 +298,10 @@
 
   <section class="hero">
     <div class="container hero-conteudo revela">
-      <p class="sobretitulo">Vestidos de noiva · Ternos</p>
+      <p class="sobretitulo">Noivas · Madrinhas · Ternos</p>
       <h1>O vestido que conta a <em>sua</em> história</h1>
       <div class="ornamento centro-orn"></div>
-      <p class="texto">Na AlceNoivas, cada noiva é recebida com calma, carinho e atenção aos detalhes — para que você encontre o vestido que faz o seu coração dizer “é este”. E vestimos também o noivo e os padrinhos.</p>
+      <p class="texto">Na AlceNoivas, cada noiva é recebida com calma, carinho e atenção aos detalhes — para que você encontre o vestido que faz o seu coração dizer “é este”. E vestimos também as madrinhas, o noivo e os padrinhos.</p>
       <div class="hero-acoes">
         <a href="#agendar" class="btn destaque">Agendar minha prova</a>
         <a href="#servicos" class="btn vazado">Ver serviços</a>
@@ -313,7 +314,7 @@
       <div class="destaques-grid revela">
         <div class="destaque-item"><div class="losango"></div><h3>Atendimento individual</h3><p>Um horário reservado só para você.</p></div>
         <div class="destaque-item"><div class="losango"></div><h3>Prova sem pressa</h3><p>Experimente com calma, ao lado de quem você ama.</p></div>
-        <div class="destaque-item"><div class="losango"></div><h3>Noiva e noivo</h3><p>Vestidos e ternos no mesmo lugar.</p></div>
+        <div class="destaque-item"><div class="losango"></div><h3>Tudo em um só lugar</h3><p>Noiva, madrinhas, noivo e padrinhos.</p></div>
       </div>
     </div>
   </section>
@@ -335,7 +336,7 @@
     <div class="container">
       <div class="centro revela">
         <p class="sobretitulo">Serviços</p>
-        <h2>Para a noiva e para o noivo</h2>
+        <h2>Para a noiva e para quem está ao lado dela</h2>
         <div class="ornamento"></div>
       </div>
       <div class="servicos-grid">
@@ -347,6 +348,12 @@
         </article>
         <article class="servico revela">
           <span class="num">02</span>
+          <h3>Vestidos de madrinha</h3>
+          <p>Opções para vestir com elegância quem estará ao seu lado no altar.</p>
+          <a href="#agendar" class="link-seta">Agendar prova</a>
+        </article>
+        <article class="servico revela">
+          <span class="num">03</span>
           <h3>Ternos masculinos</h3>
           <p>Ternos para o noivo e os padrinhos, com caimento impecável.</p>
           <a href="#agendar" class="link-seta">Agendar prova</a>
@@ -404,8 +411,8 @@
           <p>Claro! Esse é um momento para viver com quem você ama. Avise no agendamento quantas pessoas vêm com você.</p>
         </details>
         <details>
-          <summary>Vocês atendem também o noivo e os padrinhos?</summary>
-          <p>Sim. Além dos vestidos de noiva, temos ternos masculinos. Dá para agendar todo mundo pelo mesmo WhatsApp.</p>
+          <summary>Vocês atendem também madrinhas, noivo e padrinhos?</summary>
+          <p>Sim. Além dos vestidos de noiva, temos vestidos de madrinha e ternos masculinos. Dá para agendar todo mundo pelo mesmo WhatsApp.</p>
         </details>
       </div>
     </div>
@@ -453,7 +460,7 @@
     <div class="rodape-grid">
       <div>
         <a href="#topo" class="logo"><img src="logo.png" alt="" loading="lazy"><span>Alce<em>Noivas</em></span></a>
-        <p class="lema">Vestidos de noiva e ternos masculinos, com atendimento feito com calma e carinho.</p>
+        <p class="lema">Vestidos de noiva, vestidos de madrinha e ternos masculinos, com atendimento feito com calma e carinho.</p>
       </div>
       <div>
         <h4>Navegação</h4>
