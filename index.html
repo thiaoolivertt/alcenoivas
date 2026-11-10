@@ -6,8 +6,7 @@
 <title>AlceNoivas — Vestidos de Noiva</title>
 <script>document.documentElement.classList.add("js");</script>
 <meta name="description" content="AlceNoivas: vestidos de noiva, vestidos de madrinha e ternos masculinos para o seu casamento. Agende sua prova pelo WhatsApp.">
-<!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook).
-     Depois de publicar o site, troque og:image pelo endereço completo, ex.: https://www.seudominio.com.br/logo.png -->
+<!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="AlceNoivas">
@@ -15,272 +14,232 @@
 <meta property="og:description" content="Vestidos de noiva, vestidos de madrinha e ternos masculinos. Agende sua prova pelo WhatsApp.">
 <meta property="og:url" content="https://thiaoolivertt.github.io/alcenoivas/">
 <meta property="og:image" content="https://thiaoolivertt.github.io/alcenoivas/logo.png">
-<meta name="theme-color" content="#2f2f33">
+<meta name="theme-color" content="#fbe9f3">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Parisienne&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Paleta do logo: grafite, branco e o magenta das flores */
-    --marfim: #fdfbfc;
-    --creme: #f8f1f5;
-    --areia: #eadde5;
+    /* Cores do logo — grafite e magenta das flores — em tons mais suaves e quentes */
+    --papel: #fffaf7;
+    --blush: #fdf0f6;
+    --blush-forte: #f9dcea;
+    --linha: #f0dbe6;
     --rose: #c2449a;
     --rose-escuro: #a12b7d;
-    --rose-claro: #e99bcd;
-    --tinta: #2f2f33;
-    --tinta-funda: #232326;
-    --tinta-suave: #66626b;
+    --rose-claro: #f0a9d4;
+    --tinta: #34313a;
+    --tinta-suave: #6d6772;
     --branco: #ffffff;
     --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: "Jost", "Segoe UI", sans-serif;
-    --sombra: 0 24px 60px -24px rgba(47, 47, 51, .22);
+    --sans: "Nunito Sans", "Segoe UI", sans-serif;
+    --script: "Parisienne", "Segoe Script", cursive;
+    --sombra: 0 18px 44px -20px rgba(161, 43, 125, .28);
+    --sombra-leve: 0 8px 24px -14px rgba(52, 49, 58, .22);
+    --raio: 26px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--sans); font-weight: 300; color: var(--tinta); background: var(--marfim);
-    line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased;
-  }
+  body { font-family: var(--sans); color: var(--tinta); background: var(--papel); line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased; }
   img, svg { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
-  .container { width: min(1140px, 100% - 44px); margin-inline: auto; }
+  .container { width: min(1120px, 100% - 44px); margin-inline: auto; }
 
-  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; letter-spacing: -.005em; }
-  h2 { font-size: clamp(2.1rem, 4.4vw, 3.1rem); }
-  h3 { font-size: 1.6rem; }
-  .sobretitulo {
-    font-size: .74rem; letter-spacing: .32em; text-transform: uppercase;
-    color: var(--rose-escuro); font-weight: 500; margin-bottom: 16px;
-  }
-  /* Ornamento: linha com losango, inspirado na coroa do logo */
-  .ornamento {
-    position: relative; width: 132px; height: 1px; margin: 26px 0 28px;
-    background: linear-gradient(90deg, var(--rose), rgba(194, 68, 154, 0));
-  }
-  .ornamento::after {
-    content: ""; position: absolute; left: 0; top: 50%; width: 7px; height: 7px;
-    background: var(--rose); transform: translateY(-50%) rotate(45deg);
-  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.12; }
+  h2 { font-size: clamp(2.1rem, 4.4vw, 3rem); }
+  h3 { font-size: 1.55rem; }
+  .manuscrito { font-family: var(--script); font-weight: 400; color: var(--rose-escuro); }
+  .sobretitulo { font-family: var(--script); font-size: 1.95rem; line-height: 1.1; color: var(--rose-escuro); margin-bottom: 6px; }
+  .ornamento { display: inline-flex; align-items: center; gap: 12px; color: var(--rose); font-size: 1rem; margin: 18px 0 24px; }
+  .ornamento::before, .ornamento::after { content: ""; width: 46px; height: 1px; background: currentColor; opacity: .45; }
   .centro { text-align: center; }
-  .centro .ornamento { margin-inline: auto; background: linear-gradient(90deg, rgba(194, 68, 154, 0), var(--rose), rgba(194, 68, 154, 0)); }
-  .centro .ornamento::after { left: 50%; transform: translate(-50%, -50%) rotate(45deg); }
-  section { padding: clamp(72px, 10vw, 128px) 0; scroll-margin-top: 70px; }
+  section { padding: clamp(68px, 9vw, 116px) 0; scroll-margin-top: 70px; }
 
   .btn {
-    display: inline-block; padding: 16px 36px; border: 1px solid var(--tinta);
-    font-family: var(--sans); font-size: .76rem; letter-spacing: .22em; text-transform: uppercase;
-    font-weight: 500; cursor: pointer; background: var(--tinta); color: var(--branco);
-    transition: background .3s, border-color .3s, color .3s, transform .3s, box-shadow .3s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 32px; border-radius: 999px; border: 2px solid var(--rose-escuro);
+    font-family: var(--sans); font-size: 1rem; font-weight: 700; cursor: pointer; background: var(--rose-escuro); color: var(--branco);
+    box-shadow: var(--sombra); transition: transform .25s, background .25s, border-color .25s, box-shadow .25s, color .25s;
   }
-  .btn:hover { background: var(--rose-escuro); border-color: var(--rose-escuro); transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(161, 43, 125, .6); }
-  .btn.destaque { background: var(--rose-escuro); border-color: var(--rose-escuro); }
-  .btn.destaque:hover { background: var(--rose); border-color: var(--rose); }
-  .btn.vazado { background: transparent; color: var(--branco); border-color: rgba(255, 255, 255, .45); }
-  .btn.vazado:hover { background: var(--branco); color: var(--tinta); border-color: var(--branco); box-shadow: none; }
-  :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
-  .hero :focus-visible, footer :focus-visible, .faixa :focus-visible { outline-color: var(--rose-claro); }
+  .btn:hover { background: var(--rose); border-color: var(--rose); transform: translateY(-3px); }
+  .btn.suave { background: var(--branco); color: var(--rose-escuro); border-color: var(--blush-forte); box-shadow: none; }
+  .btn.suave:hover { border-color: var(--rose); background: var(--branco); }
+  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
+  footer :focus-visible { outline-color: var(--rose-claro); }
 
   /* Faixa superior */
-  .faixa { background: var(--tinta-funda); color: #d8d3d8; text-align: center; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; padding: 9px 16px; }
-  .faixa a { color: var(--branco); font-weight: 400; border-bottom: 1px solid rgba(233, 155, 205, .6); }
+  .faixa { background: var(--blush-forte); color: var(--tinta); text-align: center; font-size: .9rem; padding: 9px 16px; }
+  .faixa a { font-weight: 700; color: var(--rose-escuro); text-decoration: underline; text-underline-offset: 3px; }
 
   /* Cabeçalho */
-  header { position: sticky; top: 0; z-index: 50; background: var(--branco); border-bottom: 1px solid var(--areia); transition: box-shadow .3s; }
-  header.rolando { box-shadow: 0 10px 30px -18px rgba(47, 47, 51, .35); }
+  header.topo { position: sticky; top: 0; z-index: 50; background: rgba(255, 250, 247, .94); backdrop-filter: blur(10px); transition: box-shadow .3s; }
+  header.topo.rolando { box-shadow: 0 10px 30px -20px rgba(52, 49, 58, .4); }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-  .logo { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.75rem; font-weight: 500; letter-spacing: .02em; }
-  .logo em { color: var(--rose-escuro); font-weight: 400; }
-  .logo img { height: 60px; width: 60px; mix-blend-mode: multiply; }
-  .menu { display: flex; gap: 38px; align-items: center; list-style: none; }
-  .menu a:not(.btn) { position: relative; font-size: .76rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 400; padding: 6px 0; }
-  .menu a:not(.btn)::after {
-    content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--rose);
-    transform: scaleX(0); transform-origin: left; transition: transform .3s;
-  }
-  .menu a:not(.btn):hover::after { transform: scaleX(1); }
-  .menu .btn { padding: 12px 24px; }
-  .hamb { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
-  .hamb span { display: block; width: 26px; height: 1.5px; background: var(--tinta); margin: 6px 0; }
+  .logo { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.75rem; font-weight: 600; }
+  .logo em { color: var(--rose-escuro); font-weight: 500; }
+  .logo img { height: 58px; width: 58px; border-radius: 50%; background: #fff; padding: 4px; box-shadow: var(--sombra-leve); }
+  .menu { display: flex; gap: 30px; align-items: center; list-style: none; }
+  .menu a:not(.btn) { font-weight: 600; font-size: .98rem; color: var(--tinta-suave); padding: 6px 2px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+  .menu a:not(.btn):hover { color: var(--rose-escuro); border-color: var(--rose-claro); }
+  .menu .btn { padding: 11px 24px; font-size: .95rem; }
+  .hamb { display: none; background: var(--blush); border: 0; border-radius: 50%; width: 46px; height: 46px; cursor: pointer; }
+  .hamb span { display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--rose-escuro); margin: 5px auto; }
 
   /* Abertura */
-  .hero {
-    position: relative; color: var(--branco); text-align: center; padding: clamp(84px, 13vw, 168px) 0 clamp(120px, 15vw, 190px);
-    background:
-      radial-gradient(ellipse 70% 60% at 50% 0%, rgba(194, 68, 154, .30), transparent 70%),
-      radial-gradient(ellipse 50% 50% at 85% 100%, rgba(194, 68, 154, .14), transparent 70%),
-      var(--tinta);
-  }
-  .hero::before { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(255, 255, 255, .14); pointer-events: none; }
-  .hero-conteudo { position: relative; max-width: 860px; }
-  .hero .sobretitulo { color: var(--rose-claro); margin-bottom: 26px; }
-  .hero h1 { font-size: clamp(2.9rem, 7.2vw, 5.4rem); font-weight: 400; }
-  .hero h1 em { color: var(--rose-claro); }
-  .hero .ornamento { margin: 34px auto; background: linear-gradient(90deg, rgba(233, 155, 205, 0), var(--rose-claro), rgba(233, 155, 205, 0)); }
-  .hero .ornamento::after { left: 50%; transform: translate(-50%, -50%) rotate(45deg); background: var(--rose-claro); }
-  .hero .texto { max-width: 34em; margin: 0 auto 42px; color: #dcd6dc; font-size: 1.12rem; }
-  .hero-acoes { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .hero { position: relative; overflow: hidden; padding: clamp(56px, 8vw, 104px) 0 clamp(72px, 9vw, 120px); background: linear-gradient(160deg, #fff7fb 0%, #fbe6f1 55%, #fdf1ea 100%); }
+  .bolha-fundo { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55; pointer-events: none; }
+  .bolha-fundo.a { width: 420px; height: 420px; background: #f6c1df; top: -140px; right: -80px; }
+  .bolha-fundo.b { width: 340px; height: 340px; background: #fde0cf; bottom: -140px; left: -100px; }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .hero .ola { font-family: var(--script); font-size: clamp(1.9rem, 3.4vw, 2.5rem); color: var(--rose-escuro); line-height: 1.1; margin-bottom: 10px; }
+  .hero h1 { font-size: clamp(2.7rem, 6vw, 4.6rem); }
+  .hero h1 .manuscrito { font-size: 1.18em; padding: 0 .08em; }
+  .hero .texto { max-width: 31em; margin: 24px 0 34px; color: var(--tinta-suave); font-size: 1.12rem; }
+  .hero-acoes { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero .mimo { margin-top: 26px; font-size: .95rem; color: var(--tinta-suave); display: flex; align-items: center; gap: 8px; }
+  .hero .mimo svg { width: 18px; height: 18px; stroke: var(--rose); fill: none; stroke-width: 2; flex: none; }
+  .medalhao { position: relative; width: min(400px, 82%); aspect-ratio: 1; margin-inline: auto; }
+  .medalhao::before { content: ""; position: absolute; inset: -18px; border-radius: 50%; border: 2px dashed var(--rose-claro); animation: girar 60s linear infinite; }
+  .medalhao::after { content: ""; position: absolute; inset: -40px; border-radius: 50%; background: rgba(255, 255, 255, .5); z-index: -1; }
+  .medalhao img { width: 100%; height: 100%; border-radius: 50%; background: #fff; padding: 9%; box-shadow: 0 30px 60px -28px rgba(161, 43, 125, .5); }
+  .medalhao .fita { position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%) rotate(-3deg); white-space: nowrap; background: var(--branco); border-radius: 999px; padding: 6px 22px; font-family: var(--script); font-size: 1.45rem; color: var(--rose-escuro); box-shadow: var(--sombra-leve); }
+  @keyframes girar { to { transform: rotate(360deg); } }
 
   /* Destaques */
   .destaques { padding: 0; }
-  .destaques-grid {
-    position: relative; margin-top: clamp(-76px, -6vw, -52px); background: var(--branco); box-shadow: var(--sombra);
-    display: grid; grid-template-columns: repeat(3, 1fr);
-  }
-  .destaque-item { padding: 40px 34px; text-align: center; border-right: 1px solid var(--areia); }
-  .destaque-item:last-child { border-right: 0; }
-  .destaque-item h3 { font-size: 1.45rem; margin-bottom: 6px; }
-  .destaque-item p { font-size: .95rem; color: var(--tinta-suave); line-height: 1.6; }
-  .losango { width: 9px; height: 9px; background: var(--rose); transform: rotate(45deg); margin: 0 auto 20px; }
+  .destaques-grid { position: relative; margin-top: -44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .destaque-item { background: var(--branco); border-radius: var(--raio); padding: 28px 26px; box-shadow: var(--sombra-leve); display: flex; gap: 16px; align-items: flex-start; }
+  .icone { flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--blush); display: grid; place-items: center; }
+  .icone svg { width: 24px; height: 24px; stroke: var(--rose-escuro); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .destaque-item h3 { font-size: 1.32rem; margin-bottom: 2px; }
+  .destaque-item p { font-size: .95rem; color: var(--tinta-suave); line-height: 1.55; }
 
   /* Sobre */
-  .sobre-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
-  .sobre p { color: var(--tinta-suave); margin-bottom: 16px; }
-  .citacao {
-    position: relative; background: var(--tinta); color: var(--branco); padding: clamp(48px, 6vw, 72px) clamp(32px, 4vw, 56px);
-    font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 2.8vw, 2.15rem); line-height: 1.35;
-    box-shadow: var(--sombra);
-  }
-  .citacao::before { content: "“"; display: block; font-size: 5rem; line-height: .6; color: var(--rose-claro); margin-bottom: 18px; }
-  .citacao::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(255, 255, 255, .16); pointer-events: none; }
+  .sobre-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(40px, 6vw, 84px); align-items: center; }
+  .sobre p { color: var(--tinta-suave); margin-bottom: 14px; }
+  .carta { position: relative; background: var(--branco); border-radius: var(--raio); padding: clamp(36px, 5vw, 56px); box-shadow: var(--sombra); transform: rotate(-1.6deg); }
+  .carta::before { content: ""; position: absolute; top: -14px; left: 50%; width: 110px; height: 30px; transform: translateX(-50%) rotate(2deg); background: rgba(240, 169, 212, .55); border-radius: 4px; }
+  .carta blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.5rem, 2.6vw, 1.95rem); line-height: 1.4; }
+  .carta .assinatura { margin-top: 22px; font-family: var(--script); font-size: 1.9rem; color: var(--rose-escuro); line-height: 1.2; }
+  .carta .assinatura small { display: block; font-family: var(--sans); font-size: .85rem; color: var(--tinta-suave); }
 
   /* Serviços */
-  .servicos { background: var(--creme); }
-  .servicos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
-  .servico {
-    position: relative; background: var(--branco); padding: clamp(36px, 5vw, 56px); border: 1px solid var(--areia);
-    transition: transform .35s, box-shadow .35s; overflow: hidden;
-  }
-  .servico::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--rose); transform: scaleX(0); transform-origin: left; transition: transform .45s; }
-  .servico:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
-  .servico:hover::before { transform: scaleX(1); }
-  .servico .num { font-family: var(--serif); font-style: italic; font-size: 3.4rem; line-height: 1; color: var(--rose-claro); }
-  .servico h3 { font-size: 1.9rem; margin: 14px 0 12px; }
-  .servico { display: flex; flex-direction: column; align-items: flex-start; }
-  .servico p { color: var(--tinta-suave); margin-bottom: 26px; flex: 1; }
-  .link-seta { font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; color: var(--rose-escuro); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
-  .link-seta::after { content: " →"; transition: margin .3s; }
-  .link-seta:hover::after { margin-left: 6px; }
+  .servicos { background: var(--branco); border-radius: 48px 48px 0 0; }
+  .servicos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .servico { background: var(--blush); border-radius: var(--raio); padding: clamp(30px, 4vw, 44px); display: flex; flex-direction: column; align-items: flex-start; transition: transform .3s, box-shadow .3s, background .3s; }
+  .servico:hover { transform: translateY(-6px); box-shadow: var(--sombra); background: #fce8f2; }
+  .servico .num { width: 58px; height: 58px; border-radius: 50%; background: var(--branco); display: grid; place-items: center; font-family: var(--script); font-size: 1.9rem; color: var(--rose-escuro); box-shadow: var(--sombra-leve); }
+  .servico h3 { font-size: 1.75rem; margin: 20px 0 10px; }
+  .servico p { color: var(--tinta-suave); margin-bottom: 22px; flex: 1; }
+  .link-seta { font-weight: 700; color: var(--rose-escuro); display: inline-flex; align-items: center; gap: 6px; }
+  .link-seta::after { content: "→"; transition: transform .25s; }
+  .link-seta:hover::after { transform: translateX(5px); }
 
   /* Passos */
-  .passos { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; }
-  .passos::before { content: ""; position: absolute; top: 34px; left: 16.66%; right: 16.66%; height: 1px; background: var(--areia); }
+  .como { background: var(--branco); padding-top: 0; }
+  .passos { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 48px; }
+  .passos::before { content: ""; position: absolute; top: 36px; left: 16.66%; right: 16.66%; border-top: 2px dashed var(--rose-claro); }
   .passo { position: relative; text-align: center; padding: 0 8px; }
-  .passo .bolha {
-    width: 68px; height: 68px; border-radius: 50%; border: 1px solid var(--rose); background: var(--marfim);
-    display: grid; place-items: center; margin: 0 auto 24px;
-    font-family: var(--serif); font-style: italic; font-size: 1.7rem; color: var(--rose-escuro);
-  }
-  .passo p { color: var(--tinta-suave); font-size: .97rem; margin-top: 8px; }
+  .passo .bolha { width: 72px; height: 72px; border-radius: 50%; background: var(--rose-escuro); color: var(--branco); display: grid; place-items: center; margin: 0 auto 22px; font-family: var(--script); font-size: 2rem; box-shadow: 0 0 0 8px var(--branco), var(--sombra); }
+  .passo p { color: var(--tinta-suave); margin-top: 6px; }
 
   /* Avaliações */
-  .avaliacoes { background: var(--creme); }
-  .avaliacoes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 60px; }
-  .avaliacao { position: relative; background: var(--branco); border: 1px solid var(--areia); padding: 40px 34px 34px; display: flex; flex-direction: column; }
-  .avaliacao .estrelas { color: var(--rose); letter-spacing: .3em; font-size: .95rem; margin-bottom: 18px; }
-  .avaliacao blockquote { font-family: var(--serif); font-style: italic; font-size: 1.3rem; line-height: 1.45; flex: 1; }
-  .avaliacao .autora { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--areia); }
-  .avaliacao .nome { font-weight: 500; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; }
-  .avaliacao .detalhe { font-size: .88rem; color: var(--tinta-suave); }
-  .avaliacao .selo {
-    position: absolute; top: 14px; right: 14px; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500;
-    color: var(--rose-escuro); border: 1px dashed var(--rose); padding: 3px 9px;
-  }
-  @media (max-width: 900px) { .avaliacoes-grid { grid-template-columns: 1fr; } }
+  .avaliacoes { background: linear-gradient(180deg, var(--blush) 0%, var(--papel) 100%); border-radius: 48px 48px 0 0; }
+  .avaliacoes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .avaliacao { position: relative; background: var(--branco); border-radius: var(--raio); padding: 34px 30px 28px; display: flex; flex-direction: column; box-shadow: var(--sombra-leve); }
+  .avaliacao .estrelas { color: #e7a93c; letter-spacing: .18em; font-size: 1.05rem; margin-bottom: 14px; }
+  .avaliacao blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.28rem; line-height: 1.45; flex: 1; }
+  .avaliacao .autora { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
+  .avaliacao .avatar { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--blush-forte); color: var(--rose-escuro); display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 1.3rem; }
+  .avaliacao .nome { font-weight: 700; line-height: 1.3; }
+  .avaliacao .detalhe { font-size: .88rem; color: var(--tinta-suave); line-height: 1.3; }
+  .avaliacao .selo { position: absolute; top: 16px; right: 16px; font-size: .72rem; font-weight: 700; color: var(--rose-escuro); border: 1.5px dashed var(--rose-claro); border-radius: 999px; padding: 2px 12px; }
 
   /* Dúvidas */
-  .faq { background: var(--branco); }
   .faq-caixa { max-width: 800px; }
-  .faq details { border-bottom: 1px solid var(--areia); }
-  .faq details:first-of-type { border-top: 1px solid var(--areia); margin-top: 44px; }
-  .faq summary {
-    font-family: var(--serif); font-size: 1.42rem; font-weight: 500; padding: 24px 44px 24px 0;
-    cursor: pointer; list-style: none; position: relative; transition: color .2s;
-  }
-  .faq summary:hover { color: var(--rose-escuro); }
+  .faq-lista { display: grid; gap: 14px; margin-top: 40px; }
+  .faq details { background: var(--branco); border-radius: 20px; box-shadow: var(--sombra-leve); transition: box-shadow .25s; }
+  .faq details[open] { box-shadow: var(--sombra); }
+  .faq summary { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; padding: 20px 64px 20px 26px; cursor: pointer; list-style: none; position: relative; border-radius: 20px; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after {
-    content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
-    font-family: var(--sans); font-weight: 300; font-size: 1.6rem; color: var(--rose-escuro); transition: transform .25s;
-  }
-  .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-  .faq details p { color: var(--tinta-suave); padding: 0 44px 26px 0; }
+  .faq summary::after { content: "+"; position: absolute; right: 18px; top: 50%; width: 34px; height: 34px; margin-top: -17px; border-radius: 50%; background: var(--blush); color: var(--rose-escuro); display: grid; place-items: center; font-family: var(--sans); font-size: 1.3rem; transition: transform .25s, background .25s; }
+  .faq details[open] summary::after { transform: rotate(45deg); background: var(--blush-forte); }
+  .faq details p { color: var(--tinta-suave); padding: 0 26px 24px; }
 
   /* Agendamento */
-  .agendar { background: var(--creme); }
-  .agendar-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
-  .agendar p { color: var(--tinta-suave); }
-  .info { margin-top: 36px; display: grid; gap: 0; border-top: 1px solid var(--areia); }
-  .info div { padding: 16px 0; border-bottom: 1px solid var(--areia); }
-  .info dt { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--rose-escuro); font-weight: 500; }
-  .info dd { font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; margin-top: 2px; }
-  form { background: var(--branco); padding: clamp(28px, 4vw, 48px); border-top: 3px solid var(--rose); box-shadow: var(--sombra); display: grid; gap: 20px; }
-  .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  label { display: grid; gap: 7px; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 400; color: var(--tinta-suave); }
-  input, select, textarea {
-    font: 300 1rem var(--sans); color: var(--tinta); padding: 14px 15px; letter-spacing: 0;
-    border: 1px solid var(--areia); background: var(--marfim); width: 100%; border-radius: 0; transition: border-color .2s, background .2s;
-  }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose); background: var(--branco); box-shadow: 0 0 0 3px rgba(194, 68, 154, .12); }
-  textarea { resize: vertical; min-height: 104px; }
+  .agendar { position: relative; overflow: hidden; background: linear-gradient(160deg, #fbe6f1 0%, #fdf1ea 100%); border-radius: 48px 48px 0 0; }
+  .agendar-grid { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(36px, 6vw, 76px); align-items: start; }
+  .agendar .intro { color: var(--tinta-suave); }
+  .info { margin-top: 30px; display: grid; gap: 12px; }
+  .info div { display: flex; gap: 14px; align-items: center; background: rgba(255, 255, 255, .7); border-radius: 18px; padding: 12px 16px; }
+  .info .icone { width: 44px; height: 44px; background: var(--branco); }
+  .info .icone svg { width: 20px; height: 20px; }
+  .info dt { font-size: .82rem; font-weight: 700; color: var(--rose-escuro); line-height: 1.3; }
+  .info dd { line-height: 1.4; }
+  form { background: var(--branco); border-radius: 30px; padding: clamp(26px, 4vw, 44px); box-shadow: var(--sombra); display: grid; gap: 18px; }
+  form .titulo-form { font-family: var(--script); font-size: 2rem; color: var(--rose-escuro); line-height: 1.1; }
+  .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  label { display: grid; gap: 6px; font-size: .95rem; font-weight: 600; color: var(--tinta); }
+  input, select, textarea { font: 400 1rem var(--sans); color: var(--tinta); padding: 13px 16px; border: 1.5px solid var(--linha); background: var(--papel); width: 100%; border-radius: 14px; transition: border-color .2s, box-shadow .2s, background .2s; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose); background: var(--branco); box-shadow: 0 0 0 4px rgba(194, 68, 154, .14); }
+  textarea { resize: vertical; min-height: 100px; }
   form .btn { width: 100%; }
-  .nota { font-size: .85rem; color: var(--tinta-suave); text-align: center; }
+  .nota { font-size: .88rem; color: var(--tinta-suave); text-align: center; }
 
   /* Rodapé */
-  footer { background: var(--tinta-funda); color: #c9c4ca; padding: 72px 0 28px; font-size: .95rem; }
-  .rodape-grid { display: grid; grid-template-columns: 1.3fr .8fr 1.2fr; gap: 56px; padding-bottom: 52px; }
-  footer .logo { color: var(--branco); font-size: 2rem; }
-  footer .logo em { color: var(--rose-claro); }
-  footer .logo img { height: 84px; width: 84px; mix-blend-mode: normal; background: #fff; border-radius: 50%; padding: 8px; }
-  footer .lema { margin-top: 20px; max-width: 26em; }
-  footer h4 { font-family: var(--sans); font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 500; color: var(--rose-claro); margin-bottom: 18px; }
-  footer ul { list-style: none; display: grid; gap: 10px; }
-  footer ul a { transition: color .2s; }
-  footer ul a:hover { color: var(--branco); }
-  footer small { display: block; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 26px; font-size: .8rem; text-align: center; letter-spacing: .04em; }
+  footer.rodape { background: var(--tinta); color: #d5cfd8; padding: 64px 0 26px; font-size: .97rem; }
+  .rodape-grid { display: grid; grid-template-columns: 1.3fr .8fr 1.2fr; gap: 52px; padding-bottom: 44px; }
+  .rodape .logo { color: var(--branco); font-size: 1.9rem; }
+  .rodape .logo em { color: var(--rose-claro); }
+  .rodape .logo img { height: 76px; width: 76px; padding: 7px; }
+  .rodape .lema { margin-top: 18px; max-width: 26em; }
+  .rodape .ate-breve { font-family: var(--script); font-size: 1.9rem; color: var(--rose-claro); margin-top: 14px; line-height: 1.2; }
+  .rodape h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--branco); margin-bottom: 14px; }
+  .rodape ul { list-style: none; display: grid; gap: 8px; }
+  .rodape ul a:hover { color: var(--branco); text-decoration: underline; text-underline-offset: 3px; }
+  .rodape small { display: block; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 24px; font-size: .85rem; text-align: center; }
 
-  .whats {
-    position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%;
-    background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0, 0, 0, .25); transition: transform .25s;
-  }
-  .whats:hover { transform: scale(1.08); }
-  .whats svg { width: 30px; fill: #fff; }
+  .whats { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0, 0, 0, .25); transition: transform .25s; }
+  .whats:hover { transform: scale(1.08) rotate(-6deg); }
+  .whats svg { width: 31px; fill: #fff; }
 
-  .js .revela { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .js .revela { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
   .js .revela.visivel { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .js .revela { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  .js .carta.revela.visivel { transform: rotate(-1.6deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .js .revela { opacity: 1; transform: none; transition: none; }
+    .medalhao::before { animation: none; }
+    html { scroll-behavior: auto; }
+  }
 
   @media (max-width: 900px) {
-    .sobre-grid, .agendar-grid, .servicos-grid { grid-template-columns: 1fr; }
-    .destaques-grid { grid-template-columns: 1fr; }
-    .destaque-item { border-right: 0; border-bottom: 1px solid var(--areia); padding: 30px 26px; }
-    .destaque-item:last-child { border-bottom: 0; }
-    .passos { grid-template-columns: 1fr; gap: 44px; }
+    .hero-grid, .sobre-grid, .agendar-grid, .servicos-grid, .avaliacoes-grid, .destaques-grid { grid-template-columns: 1fr; }
+    .hero { text-align: center; }
+    .hero .texto { margin-inline: auto; }
+    .hero-acoes, .hero .mimo { justify-content: center; }
+    .medalhao { width: min(280px, 70%); margin-top: 26px; }
+    .destaques-grid { margin-top: -36px; gap: 14px; }
+    .passos { grid-template-columns: 1fr; gap: 40px; }
     .passos::before { display: none; }
-    .rodape-grid { grid-template-columns: 1fr; gap: 40px; }
+    .rodape-grid { grid-template-columns: 1fr; gap: 36px; }
+    .servicos, .avaliacoes, .agendar { border-radius: 32px 32px 0 0; }
     .hamb { display: block; }
-    .menu {
-      display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 22px;
-      background: var(--branco); padding: 28px 22px 32px; border-bottom: 1px solid var(--areia); box-shadow: 0 20px 30px -20px rgba(47, 47, 51, .3);
-    }
+    .menu { display: none; position: absolute; top: 100%; left: 12px; right: 12px; flex-direction: column; gap: 18px; background: var(--branco); padding: 26px 22px 28px; border-radius: 24px; box-shadow: var(--sombra); }
     .menu.aberto { display: flex; }
     .nav { height: 72px; }
-    .logo img { height: 52px; width: 52px; }
-    .hero::before { inset: 10px; }
+    .logo img { height: 50px; width: 50px; }
   }
   @media (max-width: 520px) {
     .linha { grid-template-columns: 1fr; }
-    .hero-acoes .btn { width: 100%; text-align: center; }
-    .faixa { font-size: .66rem; letter-spacing: .12em; }
+    .hero-acoes .btn { width: 100%; }
   }
 </style>
 </head>
 <body>
 
-<div class="faixa">Agende sua prova pelo WhatsApp · <a id="faixa-whats" target="_blank" rel="noopener" data-loja="telefone"></a></div>
+<div class="faixa">Agende sua prova pelo WhatsApp: <a id="faixa-whats" target="_blank" rel="noopener" data-loja="telefone"></a></div>
 
-<header>
+<header class="topo">
   <div class="container nav">
     <a href="#topo" class="logo"><img src="logo.png" alt="Logo da AlceNoivas"><span>Alce<em>Noivas</em></span></a>
     <button class="hamb" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -288,6 +247,7 @@
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
       <li><a href="#duvidas">Dúvidas</a></li>
       <li><a href="#agendar" class="btn">Agendar prova</a></li>
     </ul>
@@ -297,14 +257,22 @@
 <main id="topo">
 
   <section class="hero">
-    <div class="container hero-conteudo revela">
-      <p class="sobretitulo">Noivas · Madrinhas · Ternos</p>
-      <h1>O vestido que conta a <em>sua</em> história</h1>
-      <div class="ornamento centro-orn"></div>
-      <p class="texto">Na AlceNoivas, cada noiva é recebida com calma, carinho e atenção aos detalhes — para que você encontre o vestido que faz o seu coração dizer “é este”. E vestimos também as madrinhas, o noivo e os padrinhos.</p>
-      <div class="hero-acoes">
-        <a href="#agendar" class="btn destaque">Agendar minha prova</a>
-        <a href="#servicos" class="btn vazado">Ver serviços</a>
+    <div class="bolha-fundo a"></div>
+    <div class="bolha-fundo b"></div>
+    <div class="container hero-grid">
+      <div class="revela">
+        <p class="ola">Seja bem-vinda!</p>
+        <h1>O vestido que conta a <span class="manuscrito">sua</span> história</h1>
+        <p class="texto">Na AlceNoivas, cada noiva é recebida com calma, carinho e atenção aos detalhes — para que você encontre o vestido que faz o seu coração dizer “é este”. E vestimos também as madrinhas, o noivo e os padrinhos.</p>
+        <div class="hero-acoes">
+          <a href="#agendar" class="btn">Quero agendar minha prova</a>
+          <a href="#servicos" class="btn suave">Conhecer os serviços</a>
+        </div>
+        <p class="mimo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg>Noivas · Madrinhas · Ternos</p>
+      </div>
+      <div class="medalhao revela">
+        <img src="logo.png" alt="AlceNoivas: casal de noivos sobre uma coroa">
+        <span class="fita">feito com carinho</span>
       </div>
     </div>
   </section>
@@ -312,9 +280,18 @@
   <section class="destaques" aria-label="Diferenciais">
     <div class="container">
       <div class="destaques-grid revela">
-        <div class="destaque-item"><div class="losango"></div><h3>Atendimento individual</h3><p>Um horário reservado só para você.</p></div>
-        <div class="destaque-item"><div class="losango"></div><h3>Prova sem pressa</h3><p>Experimente com calma, ao lado de quem você ama.</p></div>
-        <div class="destaque-item"><div class="losango"></div><h3>Tudo em um só lugar</h3><p>Noiva, madrinhas, noivo e padrinhos.</p></div>
+        <div class="destaque-item">
+          <div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg></div>
+          <div><h3>Atendimento individual</h3><p>Um horário reservado só para você.</p></div>
+        </div>
+        <div class="destaque-item">
+          <div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500V12l3 2"/></svg></div>
+          <div><h3>Prova sem pressa</h3><p>Experimente com calma, ao lado de quem você ama.</p></div>
+        </div>
+        <div class="destaque-item">
+          <div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="13.500" r="5.500"/><circle cx="15" cy="13.500" r="5.500"/><path d="M10.500 5.500 12 4l1.500 1.500"/></svg></div>
+          <div><h3>Tudo em um só lugar</h3><p>Noiva, madrinhas, noivo e padrinhos.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -324,36 +301,39 @@
       <div class="revela">
         <p class="sobretitulo">Nossa história</p>
         <h2>Feito com as mãos, pensado com o coração</h2>
-        <div class="ornamento"></div>
+        <div class="ornamento" aria-hidden="true">♡</div>
         <p>A AlceNoivas nasceu do amor por vestir noivas. Aqui, o atendimento é pessoal: ouvimos seus sonhos, entendemos o estilo da sua cerimônia e acompanhamos você em cada prova, do primeiro encontro ao grande dia.</p>
         <p>Acreditamos que o vestido certo não é só bonito — ele faz você se sentir você mesma, na sua versão mais radiante.</p>
       </div>
-      <blockquote class="citacao revela">Toda noiva merece viver o momento de se olhar no espelho e se emocionar.</blockquote>
+      <div class="carta revela">
+        <blockquote>“Toda noiva merece viver o momento de se olhar no espelho e se emocionar.”</blockquote>
+        <p class="assinatura">Com carinho,<small>Equipe AlceNoivas</small></p>
+      </div>
     </div>
   </section>
 
   <section class="servicos" id="servicos">
     <div class="container">
       <div class="centro revela">
-        <p class="sobretitulo">Serviços</p>
+        <p class="sobretitulo">O que fazemos</p>
         <h2>Para a noiva e para quem está ao lado dela</h2>
-        <div class="ornamento"></div>
+        <div class="ornamento" aria-hidden="true">♡</div>
       </div>
       <div class="servicos-grid">
         <article class="servico revela">
-          <span class="num">01</span>
+          <span class="num">1</span>
           <h3>Vestidos de noiva</h3>
           <p>Uma seleção de modelos em diferentes estilos, tecidos e silhuetas para você provar com calma.</p>
           <a href="#agendar" class="link-seta">Agendar prova</a>
         </article>
         <article class="servico revela">
-          <span class="num">02</span>
+          <span class="num">2</span>
           <h3>Vestidos de madrinha</h3>
           <p>Opções para vestir com elegância quem estará ao seu lado no altar.</p>
           <a href="#agendar" class="link-seta">Agendar prova</a>
         </article>
         <article class="servico revela">
-          <span class="num">03</span>
+          <span class="num">3</span>
           <h3>Ternos masculinos</h3>
           <p>Ternos para o noivo e os padrinhos, com caimento impecável.</p>
           <a href="#agendar" class="link-seta">Agendar prova</a>
@@ -362,12 +342,12 @@
     </div>
   </section>
 
-  <section id="como-funciona">
+  <section class="como" id="como-funciona">
     <div class="container">
       <div class="centro revela">
         <p class="sobretitulo">Como funciona</p>
         <h2>Do primeiro encontro ao altar</h2>
-        <div class="ornamento"></div>
+        <div class="ornamento" aria-hidden="true">♡</div>
       </div>
       <div class="passos">
         <div class="passo revela"><div class="bolha">1</div><h3>Agende sua visita</h3><p>Escolha o melhor dia e horário e conte um pouco sobre o seu casamento.</p></div>
@@ -381,9 +361,9 @@
   <section class="avaliacoes" id="avaliacoes">
     <div class="container">
       <div class="centro revela">
-        <p class="sobretitulo">Avaliações</p>
+        <p class="sobretitulo">Quem já passou por aqui</p>
         <h2>O que dizem nossas clientes</h2>
-        <div class="ornamento"></div>
+        <div class="ornamento" aria-hidden="true">♡</div>
       </div>
       <div class="avaliacoes-grid revela" id="lista-avaliacoes"></div>
     </div>
@@ -393,11 +373,11 @@
   <section class="faq" id="duvidas">
     <div class="container faq-caixa">
       <div class="centro revela">
-        <p class="sobretitulo">Dúvidas frequentes</p>
+        <p class="sobretitulo">Ficou com dúvida?</p>
         <h2>Antes da sua visita</h2>
-        <div class="ornamento"></div>
+        <div class="ornamento" aria-hidden="true">♡</div>
       </div>
-      <div class="revela">
+      <div class="faq-lista revela">
         <details>
           <summary>Preciso agendar horário?</summary>
           <p>Recomendamos agendar, assim reservamos um tempo só para você e conseguimos atender com calma. É só enviar uma mensagem pelo WhatsApp.</p>
@@ -419,48 +399,63 @@
   </section>
 
   <section class="agendar" id="agendar">
+    <div class="bolha-fundo a"></div>
     <div class="container agendar-grid">
       <div class="revela">
-        <p class="sobretitulo">Agendamento</p>
+        <p class="sobretitulo">Vamos conversar?</p>
         <h2>Venha viver esse momento</h2>
-        <div class="ornamento"></div>
-        <p>Preencha o formulário e sua mensagem será enviada pelo WhatsApp. Retornamos para confirmar o horário da sua prova.</p>
+        <div class="ornamento" aria-hidden="true">♡</div>
+        <p class="intro">Preencha o formulário e sua mensagem chega direto no nosso WhatsApp. A gente responde para confirmar o horário da sua prova.</p>
         <dl class="info">
-          <div><dt>Endereço</dt><dd data-loja="endereco"></dd></div>
-          <div><dt>Horário</dt><dd data-loja="horario"></dd></div>
-          <div><dt>Telefone / WhatsApp</dt><dd data-loja="telefone"></dd></div>
-          <div><dt>Instagram</dt><dd><a data-loja="instagram" target="_blank" rel="noopener"></a></dd></div>
+          <div>
+            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.500-5.600-6.500-11a6.500 6.500 0 0 1 13 0c0 5.400-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.300"/></svg></span>
+            <span><dt>Endereço</dt><dd data-loja="endereco"></dd></span>
+          </div>
+          <div>
+            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500V12l3 2"/></svg></span>
+            <span><dt>Horário</dt><dd data-loja="horario"></dd></span>
+          </div>
+          <div>
+            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.500 4h3l1.500 4-2 1.500a11 11 0 0 0 5.500 5.500l1.500-2 4 1.500v3a2 2 0 0 1-2 2A15 15 0 0 1 4.500 6a2 2 0 0 1 2-2z"/></svg></span>
+            <span><dt>Telefone / WhatsApp</dt><dd data-loja="telefone"></dd></span>
+          </div>
+          <div>
+            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.500"/><circle cx="12" cy="12" r="3.600"/><circle cx="16.700" cy="7.300" r=".6"/></svg></span>
+            <span><dt>Instagram</dt><dd><a data-loja="instagram" target="_blank" rel="noopener"></a></dd></span>
+          </div>
         </dl>
       </div>
       <form id="form-agendar" class="revela">
+        <p class="titulo-form">Conte para a gente</p>
         <div class="linha">
-          <label>Seu nome<input type="text" name="nome" required autocomplete="name"></label>
-          <label>Telefone<input type="tel" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
+          <label>Como você se chama?<input type="text" name="nome" required autocomplete="name" placeholder="Seu nome"></label>
+          <label>Seu WhatsApp<input type="tel" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
         </div>
         <div class="linha">
-          <label>Data do casamento<input type="date" name="casamento"></label>
-          <label>Data desejada para a prova<input type="date" name="prova"></label>
+          <label>Quando é o casamento?<input type="date" name="casamento"></label>
+          <label>Quando quer vir provar?<input type="date" name="prova"></label>
         </div>
-        <label>O que você procura
+        <label>O que você procura?
           <select name="interesse">
             <option>Vestido de noiva</option><option>Vestido de madrinha</option><option>Terno masculino</option><option>Mais de uma opção</option>
           </select>
         </label>
-        <label>Mensagem<textarea name="mensagem" placeholder="Conte um pouco sobre o seu sonho..."></textarea></label>
-        <button type="submit" class="btn destaque">Enviar pelo WhatsApp</button>
-        <p class="nota">Ao enviar, o WhatsApp será aberto com sua mensagem pronta.</p>
+        <label>Quer contar mais alguma coisa?<textarea name="mensagem" placeholder="Conte um pouco sobre o seu sonho..."></textarea></label>
+        <button type="submit" class="btn">Enviar pelo WhatsApp</button>
+        <p class="nota">Ao enviar, o WhatsApp abre com a sua mensagem pronta.</p>
       </form>
     </div>
   </section>
 
 </main>
 
-<footer>
+<footer class="rodape">
   <div class="container">
     <div class="rodape-grid">
       <div>
         <a href="#topo" class="logo"><img src="logo.png" alt="" loading="lazy"><span>Alce<em>Noivas</em></span></a>
         <p class="lema">Vestidos de noiva, vestidos de madrinha e ternos masculinos, com atendimento feito com calma e carinho.</p>
+        <p class="ate-breve">Esperamos você!</p>
       </div>
       <div>
         <h4>Navegação</h4>
@@ -468,6 +463,7 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
           <li><a href="#duvidas">Dúvidas</a></li>
           <li><a href="#agendar">Agendar prova</a></li>
         </ul>
@@ -498,7 +494,7 @@
   const LOJA = {
     whatsapp: "5511966511005",
     telefone: "(11) 96651-1005",
-    endereco: "Rua da loja, 000 — Bairro, Cidade/UF",
+    endereco: "R. Felipe Benicio Paes Landim, 236 - Jardim Miriam, São Paulo/SP",
     horario: "Seg. a sex., 9h às 18h · Sáb., 9h às 13h",
     instagram: "alcenoivas"
   };
@@ -533,12 +529,15 @@
     if (a.exemplo) add("span", "selo", "Exemplo");
     const estrelas = add("div", "estrelas", "★".repeat(a.estrelas));
     estrelas.setAttribute("aria-label", a.estrelas + " de 5 estrelas");
-    add("blockquote", "", a.texto);
+    add("blockquote", "", "“" + a.texto + "”");
     const autora = add("div", "autora", "");
-    add("p", "nome", a.nome, autora);
-    add("p", "detalhe", a.detalhe, autora);
+    add("span", "avatar", a.exemplo ? "♡" : a.nome.trim().charAt(0).toUpperCase(), autora).setAttribute("aria-hidden", "true");
+    const dados = add("div", "", "", autora);
+    add("p", "nome", a.nome, dados);
+    add("p", "detalhe", a.detalhe, dados);
     listaAvaliacoes.appendChild(cartao);
   });
+
   const linkWhats = (texto) => "https://wa.me/" + LOJA.whatsapp + "?text=" + encodeURIComponent(texto);
   const saudacao = "Olá! Gostaria de agendar uma prova na AlceNoivas.";
 
@@ -583,7 +582,7 @@
   });
 
   // Sombra no cabeçalho ao rolar
-  const cabecalho = $("header");
+  const cabecalho = $("header.topo");
   const aoRolar = () => cabecalho.classList.toggle("rolando", window.scrollY > 40);
   window.addEventListener("scroll", aoRolar, { passive: true });
   aoRolar();
