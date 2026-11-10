@@ -182,6 +182,11 @@
   label { display: grid; gap: 6px; font-size: .95rem; font-weight: 600; color: var(--tinta); }
   input, select, textarea { font: 400 1rem var(--sans); color: var(--tinta); padding: 13px 16px; border: 1.5px solid var(--linha); background: var(--papel); width: 100%; border-radius: 14px; transition: border-color .2s, box-shadow .2s, background .2s; }
   input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose); background: var(--branco); box-shadow: 0 0 0 4px rgba(194, 68, 154, .14); }
+  /* iPhone: campos de data estouravam a largura do formulário */
+  label, .linha > * { min-width: 0; }
+  input, select, textarea { min-width: 0; max-width: 100%; }
+  input[type="date"] { -webkit-appearance: none; appearance: none; display: block; min-height: 52px; text-align: left; }
+  input[type="date"]::-webkit-date-and-time-value { text-align: left; }
   textarea { resize: vertical; min-height: 100px; }
   form .btn { width: 100%; }
   .nota { font-size: .88rem; color: var(--tinta-suave); text-align: center; }
