@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlceNoivas — Vestidos de Noiva</title>
+<script>document.documentElement.classList.add("js");</script>
+<meta name="description" content="AlceNoivas: vestidos de noiva e ternos masculinos para o seu casamento. Agende sua prova pelo WhatsApp.">
+<!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook).
+     Depois de publicar o site, troque og:image pelo endereço completo, ex.: https://www.seudominio.com.br/logo.png -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="AlceNoivas">
+<meta property="og:title" content="AlceNoivas — Vestidos de noiva e ternos">
+<meta property="og:description" content="Vestidos de noiva e ternos masculinos. Agende sua prova pelo WhatsApp.">
+<meta property="og:url" content="https://thiaoolivertt.github.io/alcenoivas/">
+<meta property="og:image" content="https://thiaoolivertt.github.io/alcenoivas/logo.png">
+<meta name="theme-color" content="#2f2f33">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Paleta do logo: grafite, branco e o magenta das flores */
+    --marfim: #fdfbfc;
+    --creme: #f8f1f5;
+    --areia: #eadde5;
+    --rose: #c2449a;
+    --rose-escuro: #a12b7d;
+    --rose-claro: #e99bcd;
+    --tinta: #2f2f33;
+    --tinta-funda: #232326;
+    --tinta-suave: #66626b;
+    --branco: #ffffff;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Jost", "Segoe UI", sans-serif;
+    --sombra: 0 24px 60px -24px rgba(47, 47, 51, .22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans); font-weight: 300; color: var(--tinta); background: var(--marfim);
+    line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .container { width: min(1140px, 100% - 44px); margin-inline: auto; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; letter-spacing: -.005em; }
+  h2 { font-size: clamp(2.1rem, 4.4vw, 3.1rem); }
+  h3 { font-size: 1.6rem; }
+  .sobretitulo {
+    font-size: .74rem; letter-spacing: .32em; text-transform: uppercase;
+    color: var(--rose-escuro); font-weight: 500; margin-bottom: 16px;
+  }
+  /* Ornamento: linha com losango, inspirado na coroa do logo */
+  .ornamento {
+    position: relative; width: 132px; height: 1px; margin: 26px 0 28px;
+    background: linear-gradient(90deg, var(--rose), rgba(194, 68, 154, 0));
+  }
+  .ornamento::after {
+    content: ""; position: absolute; left: 0; top: 50%; width: 7px; height: 7px;
+    background: var(--rose); transform: translateY(-50%) rotate(45deg);
+  }
+  .centro { text-align: center; }
+  .centro .ornamento { margin-inline: auto; background: linear-gradient(90deg, rgba(194, 68, 154, 0), var(--rose), rgba(194, 68, 154, 0)); }
+  .centro .ornamento::after { left: 50%; transform: translate(-50%, -50%) rotate(45deg); }
+  section { padding: clamp(72px, 10vw, 128px) 0; scroll-margin-top: 70px; }
+
+  .btn {
+    display: inline-block; padding: 16px 36px; border: 1px solid var(--tinta);
+    font-family: var(--sans); font-size: .76rem; letter-spacing: .22em; text-transform: uppercase;
+    font-weight: 500; cursor: pointer; background: var(--tinta); color: var(--branco);
+    transition: background .3s, border-color .3s, color .3s, transform .3s, box-shadow .3s;
+  }
+  .btn:hover { background: var(--rose-escuro); border-color: var(--rose-escuro); transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(161, 43, 125, .6); }
+  .btn.destaque { background: var(--rose-escuro); border-color: var(--rose-escuro); }
+  .btn.destaque:hover { background: var(--rose); border-color: var(--rose); }
+  .btn.vazado { background: transparent; color: var(--branco); border-color: rgba(255, 255, 255, .45); }
+  .btn.vazado:hover { background: var(--branco); color: var(--tinta); border-color: var(--branco); box-shadow: none; }
+  :focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+  .hero :focus-visible, footer :focus-visible, .faixa :focus-visible { outline-color: var(--rose-claro); }
+
+  /* Faixa superior */
+  .faixa { background: var(--tinta-funda); color: #d8d3d8; text-align: center; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; padding: 9px 16px; }
+  .faixa a { color: var(--branco); font-weight: 400; border-bottom: 1px solid rgba(233, 155, 205, .6); }
+
+  /* Cabeçalho */
+  header { position: sticky; top: 0; z-index: 50; background: var(--branco); border-bottom: 1px solid var(--areia); transition: box-shadow .3s; }
+  header.rolando { box-shadow: 0 10px 30px -18px rgba(47, 47, 51, .35); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .logo { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.75rem; font-weight: 500; letter-spacing: .02em; }
+  .logo em { color: var(--rose-escuro); font-weight: 400; }
+  .logo img { height: 60px; width: 60px; mix-blend-mode: multiply; }
+  .menu { display: flex; gap: 38px; align-items: center; list-style: none; }
+  .menu a:not(.btn) { position: relative; font-size: .76rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 400; padding: 6px 0; }
+  .menu a:not(.btn)::after {
+    content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--rose);
+    transform: scaleX(0); transform-origin: left; transition: transform .3s;
+  }
+  .menu a:not(.btn):hover::after { transform: scaleX(1); }
+  .menu .btn { padding: 12px 24px; }
+  .hamb { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .hamb span { display: block; width: 26px; height: 1.5px; background: var(--tinta); margin: 6px 0; }
+
+  /* Abertura */
+  .hero {
+    position: relative; color: var(--branco); text-align: center; padding: clamp(84px, 13vw, 168px) 0 clamp(120px, 15vw, 190px);
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 0%, rgba(194, 68, 154, .30), transparent 70%),
+      radial-gradient(ellipse 50% 50% at 85% 100%, rgba(194, 68, 154, .14), transparent 70%),
+      var(--tinta);
+  }
+  .hero::before { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(255, 255, 255, .14); pointer-events: none; }
+  .hero-conteudo { position: relative; max-width: 860px; }
+  .hero .sobretitulo { color: var(--rose-claro); margin-bottom: 26px; }
+  .hero h1 { font-size: clamp(2.9rem, 7.2vw, 5.4rem); font-weight: 400; }
+  .hero h1 em { color: var(--rose-claro); }
+  .hero .ornamento { margin: 34px auto; background: linear-gradient(90deg, rgba(233, 155, 205, 0), var(--rose-claro), rgba(233, 155, 205, 0)); }
+  .hero .ornamento::after { left: 50%; transform: translate(-50%, -50%) rotate(45deg); background: var(--rose-claro); }
+  .hero .texto { max-width: 34em; margin: 0 auto 42px; color: #dcd6dc; font-size: 1.12rem; }
+  .hero-acoes { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+  /* Destaques */
+  .destaques { padding: 0; }
+  .destaques-grid {
+    position: relative; margin-top: clamp(-76px, -6vw, -52px); background: var(--branco); box-shadow: var(--sombra);
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .destaque-item { padding: 40px 34px; text-align: center; border-right: 1px solid var(--areia); }
+  .destaque-item:last-child { border-right: 0; }
+  .destaque-item h3 { font-size: 1.45rem; margin-bottom: 6px; }
+  .destaque-item p { font-size: .95rem; color: var(--tinta-suave); line-height: 1.6; }
+  .losango { width: 9px; height: 9px; background: var(--rose); transform: rotate(45deg); margin: 0 auto 20px; }
+
+  /* Sobre */
+  .sobre-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(40px, 6vw, 88px); align-items: center; }
+  .sobre p { color: var(--tinta-suave); margin-bottom: 16px; }
+  .citacao {
+    position: relative; background: var(--tinta); color: var(--branco); padding: clamp(48px, 6vw, 72px) clamp(32px, 4vw, 56px);
+    font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 2.8vw, 2.15rem); line-height: 1.35;
+    box-shadow: var(--sombra);
+  }
+  .citacao::before { content: "“"; display: block; font-size: 5rem; line-height: .6; color: var(--rose-claro); margin-bottom: 18px; }
+  .citacao::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(255, 255, 255, .16); pointer-events: none; }
+
+  /* Serviços */
+  .servicos { background: var(--creme); }
+  .servicos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 60px; }
+  .servico {
+    position: relative; background: var(--branco); padding: clamp(36px, 5vw, 56px); border: 1px solid var(--areia);
+    transition: transform .35s, box-shadow .35s; overflow: hidden;
+  }
+  .servico::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--rose); transform: scaleX(0); transform-origin: left; transition: transform .45s; }
+  .servico:hover { transform: translateY(-6px); box-shadow: var(--sombra); }
+  .servico:hover::before { transform: scaleX(1); }
+  .servico .num { font-family: var(--serif); font-style: italic; font-size: 3.4rem; line-height: 1; color: var(--rose-claro); }
+  .servico h3 { font-size: 1.9rem; margin: 14px 0 12px; }
+  .servico p { color: var(--tinta-suave); margin-bottom: 26px; }
+  .link-seta { font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; color: var(--rose-escuro); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
+  .link-seta::after { content: " →"; transition: margin .3s; }
+  .link-seta:hover::after { margin-left: 6px; }
+
+  /* Passos */
+  .passos { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; }
+  .passos::before { content: ""; position: absolute; top: 34px; left: 16.66%; right: 16.66%; height: 1px; background: var(--areia); }
+  .passo { position: relative; text-align: center; padding: 0 8px; }
+  .passo .bolha {
+    width: 68px; height: 68px; border-radius: 50%; border: 1px solid var(--rose); background: var(--marfim);
+    display: grid; place-items: center; margin: 0 auto 24px;
+    font-family: var(--serif); font-style: italic; font-size: 1.7rem; color: var(--rose-escuro);
+  }
+  .passo p { color: var(--tinta-suave); font-size: .97rem; margin-top: 8px; }
+
+  /* Avaliações */
+  .avaliacoes { background: var(--creme); }
+  .avaliacoes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 60px; }
+  .avaliacao { position: relative; background: var(--branco); border: 1px solid var(--areia); padding: 40px 34px 34px; display: flex; flex-direction: column; }
+  .avaliacao .estrelas { color: var(--rose); letter-spacing: .3em; font-size: .95rem; margin-bottom: 18px; }
+  .avaliacao blockquote { font-family: var(--serif); font-style: italic; font-size: 1.3rem; line-height: 1.45; flex: 1; }
+  .avaliacao .autora { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--areia); }
+  .avaliacao .nome { font-weight: 500; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; }
+  .avaliacao .detalhe { font-size: .88rem; color: var(--tinta-suave); }
+  .avaliacao .selo {
+    position: absolute; top: 14px; right: 14px; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500;
+    color: var(--rose-escuro); border: 1px dashed var(--rose); padding: 3px 9px;
+  }
+  @media (max-width: 900px) { .avaliacoes-grid { grid-template-columns: 1fr; } }
+
+  /* Dúvidas */
+  .faq { background: var(--branco); }
+  .faq-caixa { max-width: 800px; }
+  .faq details { border-bottom: 1px solid var(--areia); }
+  .faq details:first-of-type { border-top: 1px solid var(--areia); margin-top: 44px; }
+  .faq summary {
+    font-family: var(--serif); font-size: 1.42rem; font-weight: 500; padding: 24px 44px 24px 0;
+    cursor: pointer; list-style: none; position: relative; transition: color .2s;
+  }
+  .faq summary:hover { color: var(--rose-escuro); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    font-family: var(--sans); font-weight: 300; font-size: 1.6rem; color: var(--rose-escuro); transition: transform .25s;
+  }
+  .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq details p { color: var(--tinta-suave); padding: 0 44px 26px 0; }
+
+  /* Agendamento */
+  .agendar { background: var(--creme); }
+  .agendar-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+  .agendar p { color: var(--tinta-suave); }
+  .info { margin-top: 36px; display: grid; gap: 0; border-top: 1px solid var(--areia); }
+  .info div { padding: 16px 0; border-bottom: 1px solid var(--areia); }
+  .info dt { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--rose-escuro); font-weight: 500; }
+  .info dd { font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; margin-top: 2px; }
+  form { background: var(--branco); padding: clamp(28px, 4vw, 48px); border-top: 3px solid var(--rose); box-shadow: var(--sombra); display: grid; gap: 20px; }
+  .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  label { display: grid; gap: 7px; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 400; color: var(--tinta-suave); }
+  input, select, textarea {
+    font: 300 1rem var(--sans); color: var(--tinta); padding: 14px 15px; letter-spacing: 0;
+    border: 1px solid var(--areia); background: var(--marfim); width: 100%; border-radius: 0; transition: border-color .2s, background .2s;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose); background: var(--branco); box-shadow: 0 0 0 3px rgba(194, 68, 154, .12); }
+  textarea { resize: vertical; min-height: 104px; }
+  form .btn { width: 100%; }
+  .nota { font-size: .85rem; color: var(--tinta-suave); text-align: center; }
+
+  /* Rodapé */
+  footer { background: var(--tinta-funda); color: #c9c4ca; padding: 72px 0 28px; font-size: .95rem; }
+  .rodape-grid { display: grid; grid-template-columns: 1.3fr .8fr 1.2fr; gap: 56px; padding-bottom: 52px; }
+  footer .logo { color: var(--branco); font-size: 2rem; }
+  footer .logo em { color: var(--rose-claro); }
+  footer .logo img { height: 84px; width: 84px; mix-blend-mode: normal; background: #fff; border-radius: 50%; padding: 8px; }
+  footer .lema { margin-top: 20px; max-width: 26em; }
+  footer h4 { font-family: var(--sans); font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 500; color: var(--rose-claro); margin-bottom: 18px; }
+  footer ul { list-style: none; display: grid; gap: 10px; }
+  footer ul a { transition: color .2s; }
+  footer ul a:hover { color: var(--branco); }
+  footer small { display: block; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 26px; font-size: .8rem; text-align: center; letter-spacing: .04em; }
+
+  .whats {
+    position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%;
+    background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0, 0, 0, .25); transition: transform .25s;
+  }
+  .whats:hover { transform: scale(1.08); }
+  .whats svg { width: 30px; fill: #fff; }
+
+  .js .revela { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .js .revela.visivel { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .revela { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  @media (max-width: 900px) {
+    .sobre-grid, .agendar-grid, .servicos-grid { grid-template-columns: 1fr; }
+    .destaques-grid { grid-template-columns: 1fr; }
+    .destaque-item { border-right: 0; border-bottom: 1px solid var(--areia); padding: 30px 26px; }
+    .destaque-item:last-child { border-bottom: 0; }
+    .passos { grid-template-columns: 1fr; gap: 44px; }
+    .passos::before { display: none; }
+    .rodape-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hamb { display: block; }
+    .menu {
+      display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 22px;
+      background: var(--branco); padding: 28px 22px 32px; border-bottom: 1px solid var(--areia); box-shadow: 0 20px 30px -20px rgba(47, 47, 51, .3);
+    }
+    .menu.aberto { display: flex; }
+    .nav { height: 72px; }
+    .logo img { height: 52px; width: 52px; }
+    .hero::before { inset: 10px; }
+  }
+  @media (max-width: 520px) {
+    .linha { grid-template-columns: 1fr; }
+    .hero-acoes .btn { width: 100%; text-align: center; }
+    .faixa { font-size: .66rem; letter-spacing: .12em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="faixa">Agende sua prova pelo WhatsApp · <a id="faixa-whats" target="_blank" rel="noopener" data-loja="telefone"></a></div>
+
+<header>
+  <div class="container nav">
+    <a href="#topo" class="logo"><img src="logo.png" alt="Logo da AlceNoivas"><span>Alce<em>Noivas</em></span></a>
+    <button class="hamb" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+      <li><a href="#agendar" class="btn">Agendar prova</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="topo">
+
+  <section class="hero">
+    <div class="container hero-conteudo revela">
+      <p class="sobretitulo">Vestidos de noiva · Ternos</p>
+      <h1>O vestido que conta a <em>sua</em> história</h1>
+      <div class="ornamento centro-orn"></div>
+      <p class="texto">Na AlceNoivas, cada noiva é recebida com calma, carinho e atenção aos detalhes — para que você encontre o vestido que faz o seu coração dizer “é este”. E vestimos também o noivo e os padrinhos.</p>
+      <div class="hero-acoes">
+        <a href="#agendar" class="btn destaque">Agendar minha prova</a>
+        <a href="#servicos" class="btn vazado">Ver serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="destaques" aria-label="Diferenciais">
+    <div class="container">
+      <div class="destaques-grid revela">
+        <div class="destaque-item"><div class="losango"></div><h3>Atendimento individual</h3><p>Um horário reservado só para você.</p></div>
+        <div class="destaque-item"><div class="losango"></div><h3>Prova sem pressa</h3><p>Experimente com calma, ao lado de quem você ama.</p></div>
+        <div class="destaque-item"><div class="losango"></div><h3>Noiva e noivo</h3><p>Vestidos e ternos no mesmo lugar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="container sobre-grid">
+      <div class="revela">
+        <p class="sobretitulo">Nossa história</p>
+        <h2>Feito com as mãos, pensado com o coração</h2>
+        <div class="ornamento"></div>
+        <p>A AlceNoivas nasceu do amor por vestir noivas. Aqui, o atendimento é pessoal: ouvimos seus sonhos, entendemos o estilo da sua cerimônia e acompanhamos você em cada prova, do primeiro encontro ao grande dia.</p>
+        <p>Acreditamos que o vestido certo não é só bonito — ele faz você se sentir você mesma, na sua versão mais radiante.</p>
+      </div>
+      <blockquote class="citacao revela">Toda noiva merece viver o momento de se olhar no espelho e se emocionar.</blockquote>
+    </div>
+  </section>
+
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="centro revela">
+        <p class="sobretitulo">Serviços</p>
+        <h2>Para a noiva e para o noivo</h2>
+        <div class="ornamento"></div>
+      </div>
+      <div class="servicos-grid">
+        <article class="servico revela">
+          <span class="num">01</span>
+          <h3>Vestidos de noiva</h3>
+          <p>Uma seleção de modelos em diferentes estilos, tecidos e silhuetas para você provar com calma.</p>
+          <a href="#agendar" class="link-seta">Agendar prova</a>
+        </article>
+        <article class="servico revela">
+          <span class="num">02</span>
+          <h3>Ternos masculinos</h3>
+          <p>Ternos para o noivo e os padrinhos, com caimento impecável.</p>
+          <a href="#agendar" class="link-seta">Agendar prova</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="container">
+      <div class="centro revela">
+        <p class="sobretitulo">Como funciona</p>
+        <h2>Do primeiro encontro ao altar</h2>
+        <div class="ornamento"></div>
+      </div>
+      <div class="passos">
+        <div class="passo revela"><div class="bolha">1</div><h3>Agende sua visita</h3><p>Escolha o melhor dia e horário e conte um pouco sobre o seu casamento.</p></div>
+        <div class="passo revela"><div class="bolha">2</div><h3>Prove com calma</h3><p>Experimente os modelos que combinam com você, com toda a nossa atenção.</p></div>
+        <div class="passo revela"><div class="bolha">3</div><h3>Pronto para o grande dia</h3><p>Com a escolha feita, combinamos todos os detalhes até a data do casamento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES — os textos vêm da lista AVALIACOES, no fim do arquivo -->
+  <section class="avaliacoes" id="avaliacoes">
+    <div class="container">
+      <div class="centro revela">
+        <p class="sobretitulo">Avaliações</p>
+        <h2>O que dizem nossas clientes</h2>
+        <div class="ornamento"></div>
+      </div>
+      <div class="avaliacoes-grid revela" id="lista-avaliacoes"></div>
+    </div>
+  </section>
+
+  <!-- PERGUNTAS FREQUENTES — respostas provisórias: revisar com a loja antes de publicar -->
+  <section class="faq" id="duvidas">
+    <div class="container faq-caixa">
+      <div class="centro revela">
+        <p class="sobretitulo">Dúvidas frequentes</p>
+        <h2>Antes da sua visita</h2>
+        <div class="ornamento"></div>
+      </div>
+      <div class="revela">
+        <details>
+          <summary>Preciso agendar horário?</summary>
+          <p>Recomendamos agendar, assim reservamos um tempo só para você e conseguimos atender com calma. É só enviar uma mensagem pelo WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Com quanta antecedência devo procurar o vestido?</summary>
+          <p>Quanto antes, melhor: assim você escolhe sem pressa. Conte para a gente a data do casamento e orientamos sobre os prazos.</p>
+        </details>
+        <details>
+          <summary>Posso levar acompanhantes na prova?</summary>
+          <p>Claro! Esse é um momento para viver com quem você ama. Avise no agendamento quantas pessoas vêm com você.</p>
+        </details>
+        <details>
+          <summary>Vocês atendem também o noivo e os padrinhos?</summary>
+          <p>Sim. Além dos vestidos de noiva, temos ternos masculinos. Dá para agendar todo mundo pelo mesmo WhatsApp.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="agendar" id="agendar">
+    <div class="container agendar-grid">
+      <div class="revela">
+        <p class="sobretitulo">Agendamento</p>
+        <h2>Venha viver esse momento</h2>
+        <div class="ornamento"></div>
+        <p>Preencha o formulário e sua mensagem será enviada pelo WhatsApp. Retornamos para confirmar o horário da sua prova.</p>
+        <dl class="info">
+          <div><dt>Endereço</dt><dd data-loja="endereco"></dd></div>
+          <div><dt>Horário</dt><dd data-loja="horario"></dd></div>
+          <div><dt>Telefone / WhatsApp</dt><dd data-loja="telefone"></dd></div>
+          <div><dt>Instagram</dt><dd><a data-loja="instagram" target="_blank" rel="noopener"></a></dd></div>
+        </dl>
+      </div>
+      <form id="form-agendar" class="revela">
+        <div class="linha">
+          <label>Seu nome<input type="text" name="nome" required autocomplete="name"></label>
+          <label>Telefone<input type="tel" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
+        </div>
+        <div class="linha">
+          <label>Data do casamento<input type="date" name="casamento"></label>
+          <label>Data desejada para a prova<input type="date" name="prova"></label>
+        </div>
+        <label>O que você procura
+          <select name="interesse">
+            <option>Vestido de noiva</option><option>Terno masculino</option><option>Os dois</option>
+          </select>
+        </label>
+        <label>Mensagem<textarea name="mensagem" placeholder="Conte um pouco sobre o seu sonho..."></textarea></label>
+        <button type="submit" class="btn destaque">Enviar pelo WhatsApp</button>
+        <p class="nota">Ao enviar, o WhatsApp será aberto com sua mensagem pronta.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="rodape-grid">
+      <div>
+        <a href="#topo" class="logo"><img src="logo.png" alt="" loading="lazy"><span>Alce<em>Noivas</em></span></a>
+        <p class="lema">Vestidos de noiva e ternos masculinos, com atendimento feito com calma e carinho.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#duvidas">Dúvidas</a></li>
+          <li><a href="#agendar">Agendar prova</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li data-loja="telefone"></li>
+          <li data-loja="endereco"></li>
+          <li data-loja="horario"></li>
+          <li><a data-loja="instagram" target="_blank" rel="noopener"></a></li>
+        </ul>
+      </div>
+    </div>
+    <small>© <span id="ano"></span> AlceNoivas. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<a class="whats" id="whats-flutuante" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-2-1.200 7.400 7.400 0 0 1-1.400-1.700c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.900 2.900 0 0 0-.9 2.100 5 5 0 0 0 1.100 2.700 11.500 11.500 0 0 0 4.400 3.900c.6.300 1.100.400 1.500.500a3.600 3.600 0 0 0 1.600.100 2.700 2.700 0 0 0 1.800-1.200 2.200 2.200 0 0 0 .100-1.200c0-.100-.200-.200-.500-.300z"/></svg>
+</a>
+
+<script>
+  /* ============================================================
+     DADOS DA LOJA — edite aqui com as informações reais.
+     whatsapp: só números, com 55 + DDD (ex.: 5511999998888)
+     ============================================================ */
+  const LOJA = {
+    whatsapp: "5511966511005",
+    telefone: "(11) 96651-1005",
+    endereco: "Rua da loja, 000 — Bairro, Cidade/UF",
+    horario: "Seg. a sex., 9h às 18h · Sáb., 9h às 13h",
+    instagram: "alcenoivas"
+  };
+
+  /* ============================================================
+     AVALIAÇÕES — troque pelos depoimentos reais das clientes.
+     Enquanto "exemplo" for true, o cartão mostra o selo "Exemplo".
+     Ao colocar um depoimento real, mude para exemplo: false.
+     ============================================================ */
+  const AVALIACOES = [
+    { exemplo: true, estrelas: 5, nome: "Nome da cliente", detalhe: "Noiva · mês/ano do casamento",
+      texto: "Aqui entra o depoimento de uma noiva: como foi o atendimento, a prova e a escolha do vestido." },
+    { exemplo: true, estrelas: 5, nome: "Nome da cliente", detalhe: "Noiva · mês/ano do casamento",
+      texto: "Aqui entra o segundo depoimento: o que ela mais gostou e como se sentiu no grande dia." },
+    { exemplo: true, estrelas: 5, nome: "Nome do cliente", detalhe: "Noivo · mês/ano do casamento",
+      texto: "Aqui entra o depoimento de um noivo ou padrinho sobre o terno e o atendimento." }
+  ];
+
+  const $ = (s) => document.querySelector(s);
+
+  const listaAvaliacoes = $("#lista-avaliacoes");
+  AVALIACOES.forEach((a) => {
+    const cartao = document.createElement("article");
+    cartao.className = "avaliacao";
+    const add = (tag, classe, texto, pai = cartao) => {
+      const el = document.createElement(tag);
+      if (classe) el.className = classe;
+      el.textContent = texto;
+      pai.appendChild(el);
+      return el;
+    };
+    if (a.exemplo) add("span", "selo", "Exemplo");
+    const estrelas = add("div", "estrelas", "★".repeat(a.estrelas));
+    estrelas.setAttribute("aria-label", a.estrelas + " de 5 estrelas");
+    add("blockquote", "", a.texto);
+    const autora = add("div", "autora", "");
+    add("p", "nome", a.nome, autora);
+    add("p", "detalhe", a.detalhe, autora);
+    listaAvaliacoes.appendChild(cartao);
+  });
+  const linkWhats = (texto) => "https://wa.me/" + LOJA.whatsapp + "?text=" + encodeURIComponent(texto);
+  const saudacao = "Olá! Gostaria de agendar uma prova na AlceNoivas.";
+
+  // Preenche os dados da loja em todos os lugares do site
+  document.querySelectorAll("[data-loja]").forEach((el) => {
+    const campo = el.dataset.loja;
+    if (campo === "instagram") {
+      el.textContent = "@" + LOJA.instagram;
+      el.href = "https://instagram.com/" + LOJA.instagram;
+    } else {
+      el.textContent = LOJA[campo];
+    }
+  });
+  $("#ano").textContent = new Date().getFullYear();
+  $("#whats-flutuante").href = linkWhats(saudacao);
+  $("#faixa-whats").href = linkWhats(saudacao);
+
+  const dataBR = (iso) => iso ? iso.split("-").reverse().join("/") : "";
+  $("#form-agendar").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.target));
+    const linhas = [
+      saudacao,
+      "",
+      "Nome: " + d.nome,
+      "Telefone: " + d.telefone,
+      d.casamento ? "Data do casamento: " + dataBR(d.casamento) : null,
+      d.prova ? "Data desejada para a prova: " + dataBR(d.prova) : null,
+      "Procuro: " + d.interesse,
+      d.mensagem.trim() ? "Mensagem: " + d.mensagem.trim() : null
+    ].filter((l) => l !== null);
+    window.open(linkWhats(linhas.join("\n")), "_blank", "noopener");
+  });
+
+  // Menu no celular
+  const hamb = $(".hamb"), menu = $(".menu");
+  hamb.addEventListener("click", () => {
+    hamb.setAttribute("aria-expanded", menu.classList.toggle("aberto"));
+  });
+  menu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") { menu.classList.remove("aberto"); hamb.setAttribute("aria-expanded", "false"); }
+  });
+
+  // Sombra no cabeçalho ao rolar
+  const cabecalho = $("header");
+  const aoRolar = () => cabecalho.classList.toggle("rolando", window.scrollY > 40);
+  window.addEventListener("scroll", aoRolar, { passive: true });
+  aoRolar();
+
+  // Animação de entrada
+  const itens = document.querySelectorAll(".revela");
+  if ("IntersectionObserver" in window) {
+    const obs = new IntersectionObserver((entradas) => {
+      entradas.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visivel"); obs.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    itens.forEach((el) => obs.observe(el));
+  } else {
+    itens.forEach((el) => el.classList.add("visivel"));
+  }
+</script>
+</body>
+</html>
