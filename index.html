@@ -176,6 +176,9 @@
   .info .icone svg { width: 20px; height: 20px; }
   .info dt { font-size: .82rem; font-weight: 700; color: var(--rose-escuro); line-height: 1.3; }
   .info dd { line-height: 1.4; }
+  .endereco-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .info .mapa { display: flex; width: fit-content; margin-top: 6px; font-size: .92rem; background: var(--branco); border: 1.5px solid var(--blush-forte); border-radius: 999px; padding: 4px 14px; transition: border-color .2s; }
+  .info .mapa:hover { border-color: var(--rose); }
   form { background: var(--branco); border-radius: 30px; padding: clamp(26px, 4vw, 44px); box-shadow: var(--sombra); display: grid; gap: 18px; }
   form .titulo-form { font-family: var(--script); font-size: 2rem; color: var(--rose-escuro); line-height: 1.1; }
   .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -549,7 +552,22 @@
   // Preenche os dados da loja em todos os lugares do site
   document.querySelectorAll("[data-loja]").forEach((el) => {
     const campo = el.dataset.loja;
-    if (campo === "instagram") {
+    if (campo === "endereco") {
+      // O endereço vira um link que abre a loja no Google Maps
+      const mapa = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(LOJA.endereco);
+      const link = document.createElement("a");
+      link.href = mapa; link.target = "_blank"; link.rel = "noopener";
+      link.className = "endereco-link";
+      link.textContent = LOJA.endereco;
+      el.textContent = "";
+      el.appendChild(link);
+      if (el.tagName === "DD") {
+        const botao = link.cloneNode();
+        botao.className = "link-seta mapa";
+        botao.textContent = "Abrir no Google Maps";
+        el.appendChild(botao);
+      }
+    } else if (campo === "instagram") {
       el.textContent = "@" + LOJA.instagram;
       el.href = "https://instagram.com/" + LOJA.instagram;
     } else {
