@@ -269,7 +269,6 @@
       <div class="arco-wrap">
         <div class="arco anima-arco">
           <img src="logo.png" alt="AlceNoivas: casal de noivos sobre uma coroa">
-          <div class="flutua card anima-flutua"><span class="ic"><i data-lucide="clock"></i></span><span><strong>Prova sem pressa</strong><small>Horário só seu</small></span></div>
           <div class="flutua fita anima-flutua">feito com carinho</div>
         </div>
       </div>
@@ -580,7 +579,6 @@
       .from(".anima-hero", { y: 36, opacity: 0, duration: .9, stagger: .12 })
       .from(".anima-arco", { scale: .9, opacity: 0, duration: 1.1 }, "-=0.8")
       .from(".anima-flutua", { y: 20, opacity: 0, duration: .7, stagger: .15 }, "-=0.5");
-    gsap.to(".flutua.card", { y: -10, duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: -1 });
     gsap.to(".flutua.fita", { y: 8, duration: 3.1, ease: "sine.inOut", yoyo: true, repeat: -1 });
     gsap.to(".arco img", { y: -24, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 
