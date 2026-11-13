@@ -170,9 +170,10 @@
 
   /* Agendamento */
   .agendar { background: var(--blush); padding: clamp(80px, 10vw, 120px) 0; }
-  .agendar .g2 { align-items: start; }
+  .agendar .g2 { align-items: stretch; }
+  .agendar-texto { display: flex; flex-direction: column; }
   .agendar h2 { margin: 4px 0 18px; }
-  .info { display: grid; gap: 12px; margin-top: 28px; }
+  .info { display: grid; gap: 12px; margin-top: 28px; flex: 1; grid-auto-rows: 1fr; }
   .info-item { display: flex; gap: 14px; align-items: center; background: #fff; border-radius: 20px; padding: 14px 18px; transition: box-shadow .25s, transform .25s; }
   a.info-item:hover { box-shadow: var(--sombra-leve); transform: translateY(-2px); }
   .info-item .ic { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--blush); color: var(--rose-escuro); display: grid; place-items: center; }
@@ -268,7 +269,6 @@
       <div class="arco-wrap">
         <div class="arco anima-arco">
           <img src="logo.png" alt="AlceNoivas: casal de noivos sobre uma coroa">
-          <div class="flutua fita anima-flutua">feito com carinho</div>
         </div>
       </div>
     </div>
@@ -390,7 +390,7 @@
 
   <section class="agendar" id="agendar">
     <div class="wrap g2">
-      <div class="revela">
+      <div class="agendar-texto revela">
         <p class="kicker">Vamos conversar?</p>
         <h2>Venha viver esse momento</h2>
         <p class="muted">Preencha o formulário e sua mensagem chega direto no nosso WhatsApp. A gente responde para confirmar o horário da sua prova.</p>
@@ -576,9 +576,7 @@
     gsap.registerPlugin(ScrollTrigger);
     gsap.timeline({ defaults: { ease: "power3.out" } })
       .from(".anima-hero", { y: 36, opacity: 0, duration: .9, stagger: .12 })
-      .from(".anima-arco", { scale: .9, opacity: 0, duration: 1.1 }, "-=0.8")
-      .from(".anima-flutua", { y: 20, opacity: 0, duration: .7, stagger: .15 }, "-=0.5");
-    gsap.to(".flutua.fita", { y: 8, duration: 3.1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      .from(".anima-arco", { scale: .9, opacity: 0, duration: 1.1 }, "-=0.8");
     gsap.to(".arco img", { y: -24, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 
     gsap.utils.toArray(".revela").forEach((el) => {
