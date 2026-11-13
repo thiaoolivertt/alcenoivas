@@ -3,252 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AlceNoivas | Vestidos de Noiva</title>
-<script>document.documentElement.classList.add("js");</script>
-<meta name="description" content="AlceNoivas: vestidos de noiva, vestidos de madrinha e ternos masculinos para o seu casamento. Agende sua prova pelo WhatsApp.">
-<!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook) -->
+<title>AlceNoivas | Vestidos de Noiva, Madrinhas e Ternos</title>
+<meta name="description" content="AlceNoivas: vestidos de noiva, vestidos de madrinha e ternos masculinos no Jardim Miriam, São Paulo. Agende sua prova pelo WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="AlceNoivas">
 <meta property="og:title" content="AlceNoivas | Noivas, madrinhas e ternos">
 <meta property="og:description" content="Vestidos de noiva, vestidos de madrinha e ternos masculinos. Agende sua prova pelo WhatsApp.">
-<meta property="og:url" content="https://thiaoolivertt.github.io/alcenoivas/">
 <meta property="og:image" content="https://thiaoolivertt.github.io/alcenoivas/logo.png">
-<meta name="theme-color" content="#fbe9f3">
+<meta name="theme-color" content="#f9f7fa">
 <link rel="icon" type="image/png" href="logo.png">
+
+<!-- Fontes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<!-- Bibliotecas: Swiper (carrossel de avaliações) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css">
+
 <style>
   :root {
-    /* Cores do logo — grafite e magenta das flores — em tons mais suaves e quentes */
-    --papel: #fffaf7;
-    --blush: #fdf0f6;
-    --blush-forte: #f9dcea;
-    --linha: #f0dbe6;
+    --papel: #f9f7fa;
+    --blush: #f7eef5;
+    --blush-forte: #efdbe9;
+    --linha: #ebe2ea;
     --rose: #c2449a;
     --rose-escuro: #a12b7d;
-    --rose-claro: #f0a9d4;
-    --tinta: #34313a;
-    --tinta-suave: #6d6772;
+    --rose-claro: #e7a6cf;
+    --tinta: #2b2730;
+    --tinta-suave: #66606c;
     --branco: #ffffff;
-    --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: "Nunito Sans", "Segoe UI", sans-serif;
-    --script: "Parisienne", "Segoe Script", cursive;
-    --sombra: 0 18px 44px -20px rgba(161, 43, 125, .28);
-    --sombra-leve: 0 8px 24px -14px rgba(52, 49, 58, .22);
-    --raio: 26px;
+    --serif: "Figtree", "Segoe UI", sans-serif;
+    --sans: "Figtree", "Segoe UI", sans-serif;
+    --script: "Figtree", "Segoe UI", sans-serif;
+    --sombra: 0 30px 60px -32px rgba(161, 43, 125, .42);
+    --sombra-leve: 0 14px 32px -18px rgba(43, 39, 48, .35);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); color: var(--tinta); background: var(--papel); line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased; }
-  img, svg { max-width: 100%; display: block; }
+  body { font-family: var(--sans); color: var(--tinta); background: var(--papel); font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img, svg { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
-  .container { width: min(1120px, 100% - 44px); margin-inline: auto; }
+  .wrap { width: min(1200px, 100% - 40px); margin-inline: auto; }
+  section { scroll-margin-top: 84px; }
+  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 8px; }
+  .escuro :focus-visible { outline-color: var(--rose-claro); }
+  [data-lucide] { width: 20px; height: 20px; stroke-width: 1.8; }
 
-  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.12; }
-  h2 { font-size: clamp(2.1rem, 4.4vw, 3rem); }
-  h3 { font-size: 1.55rem; }
-  .manuscrito { font-family: var(--script); font-weight: 400; color: var(--rose-escuro); }
-  .sobretitulo { font-family: var(--script); font-size: 1.95rem; line-height: 1.1; color: var(--rose-escuro); margin-bottom: 6px; }
-  .ornamento { display: inline-flex; align-items: center; gap: 12px; color: var(--rose); font-size: 1rem; margin: 18px 0 24px; }
-  .ornamento::before, .ornamento::after { content: ""; width: 46px; height: 1px; background: currentColor; opacity: .45; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; letter-spacing: -.02em; }
+  h2 { font-size: clamp(2.3rem, 4.6vw, 3.4rem); }
+  .script { font-family: var(--script); font-weight: 600; color: var(--rose-escuro); }
+  .kicker { font-family: var(--script); font-size: .95rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rose-escuro); line-height: 1.3; margin-bottom: 12px; }
   .centro { text-align: center; }
-  section { padding: clamp(68px, 9vw, 116px) 0; scroll-margin-top: 70px; }
+  .muted { color: var(--tinta-suave); }
 
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 32px; border-radius: 999px; border: 2px solid var(--rose-escuro);
-    font-family: var(--sans); font-size: 1rem; font-weight: 700; cursor: pointer; background: var(--rose-escuro); color: var(--branco);
-    box-shadow: var(--sombra); transition: transform .25s, background .25s, border-color .25s, box-shadow .25s, color .25s;
-  }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 30px; border-radius: 999px; font-weight: 700; font-size: 1rem; border: 2px solid var(--rose-escuro); background: var(--rose-escuro); color: #fff; cursor: pointer; transition: transform .25s, background .25s, border-color .25s, box-shadow .25s; box-shadow: 0 18px 40px -18px rgba(161, 43, 125, .6); }
   .btn:hover { background: var(--rose); border-color: var(--rose); transform: translateY(-3px); }
-  .btn.suave { background: var(--branco); color: var(--rose-escuro); border-color: var(--blush-forte); box-shadow: none; }
-  .btn.suave:hover { border-color: var(--rose); background: var(--branco); }
-  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
-  footer :focus-visible { outline-color: var(--rose-claro); }
-
-  /* Faixa superior */
-  .faixa { background: var(--blush-forte); color: var(--tinta); text-align: center; font-size: .9rem; padding: 9px 16px; }
-  .faixa a { font-weight: 700; color: var(--rose-escuro); text-decoration: underline; text-underline-offset: 3px; }
+  .btn.claro { background: #fff; color: var(--rose-escuro); border-color: var(--blush-forte); box-shadow: none; }
+  .btn.claro:hover { border-color: var(--rose); }
 
   /* Cabeçalho */
-  header.topo { position: sticky; top: 0; z-index: 50; background: rgba(255, 250, 247, .94); backdrop-filter: blur(10px); transition: box-shadow .3s; }
-  header.topo.rolando { box-shadow: 0 10px 30px -20px rgba(52, 49, 58, .4); }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .topo { position: sticky; top: 0; z-index: 50; background: rgba(249, 247, 250, .92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s; }
+  .topo.rolando { border-color: var(--linha); box-shadow: 0 10px 30px -22px rgba(43, 39, 48, .5); }
+  .nav { height: 80px; display: flex; align-items: center; justify-content: space-between; }
   .logo { display: inline-flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.75rem; font-weight: 600; }
   .logo em { color: var(--rose-escuro); font-weight: 500; }
-  .logo img { height: 58px; width: 58px; border-radius: 50%; background: #fff; padding: 4px; box-shadow: var(--sombra-leve); }
-  .menu { display: flex; gap: 30px; align-items: center; list-style: none; }
-  .menu a:not(.btn) { font-weight: 600; font-size: .98rem; color: var(--tinta-suave); padding: 6px 2px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
-  .menu a:not(.btn):hover { color: var(--rose-escuro); border-color: var(--rose-claro); }
-  .menu .btn { padding: 11px 24px; font-size: .95rem; }
-  .hamb { display: none; background: var(--blush); border: 0; border-radius: 50%; width: 46px; height: 46px; cursor: pointer; }
-  .hamb span { display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--rose-escuro); margin: 5px auto; }
+  .logo img { width: 54px; height: 54px; border-radius: 50%; background: #fff; padding: 4px; box-shadow: var(--sombra-leve); }
+  .menu { display: flex; align-items: center; gap: 28px; list-style: none; }
+  .menu a:not(.btn) { font-weight: 600; color: var(--tinta-suave); position: relative; padding: 4px 0; }
+  .menu a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--rose-claro); transform: scaleX(0); transition: transform .25s; }
+  .menu a:not(.btn):hover { color: var(--rose-escuro); }
+  .menu a:not(.btn):hover::after { transform: scaleX(1); }
+  .menu .btn { padding: 11px 22px; font-size: .95rem; }
+  .hamb { display: none; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--blush); color: var(--rose-escuro); cursor: pointer; align-items: center; justify-content: center; }
 
   /* Abertura */
-  .hero { position: relative; overflow: hidden; padding: clamp(56px, 8vw, 104px) 0 clamp(72px, 9vw, 120px); background: linear-gradient(160deg, #fff7fb 0%, #fbe6f1 55%, #fdf1ea 100%); }
-  .bolha-fundo { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55; pointer-events: none; }
-  .bolha-fundo.a { width: 420px; height: 420px; background: #f6c1df; top: -140px; right: -80px; }
-  .bolha-fundo.b { width: 340px; height: 340px; background: #fde0cf; bottom: -140px; left: -100px; }
-  .hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-  .hero .ola { font-family: var(--script); font-size: clamp(1.9rem, 3.4vw, 2.5rem); color: var(--rose-escuro); line-height: 1.1; margin-bottom: 10px; }
-  .hero h1 { font-size: clamp(2.7rem, 6vw, 4.6rem); }
-  .hero h1 .manuscrito { font-size: 1.18em; padding: 0 .08em; }
-  .hero .texto { max-width: 31em; margin: 24px 0 34px; color: var(--tinta-suave); font-size: 1.12rem; }
-  .hero-acoes { display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero .mimo { margin-top: 26px; font-size: .95rem; color: var(--tinta-suave); display: flex; align-items: center; gap: 8px; }
-  .hero .mimo svg { width: 18px; height: 18px; stroke: var(--rose); fill: none; stroke-width: 2; flex: none; }
-  .medalhao { position: relative; width: min(400px, 82%); aspect-ratio: 1; margin-inline: auto; }
-  .medalhao::before { content: ""; position: absolute; inset: -18px; border-radius: 50%; border: 2px dashed var(--rose-claro); animation: girar 60s linear infinite; }
-  .medalhao::after { content: ""; position: absolute; inset: -40px; border-radius: 50%; background: rgba(255, 255, 255, .5); z-index: -1; }
-  .medalhao img { width: 100%; height: 100%; border-radius: 50%; background: #fff; padding: 9%; box-shadow: 0 30px 60px -28px rgba(161, 43, 125, .5); }
-  .medalhao .fita { position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%) rotate(-3deg); white-space: nowrap; background: var(--branco); border-radius: 999px; padding: 6px 22px; font-family: var(--script); font-size: 1.45rem; color: var(--rose-escuro); box-shadow: var(--sombra-leve); }
-  @keyframes girar { to { transform: rotate(360deg); } }
+  .hero { position: relative; background: var(--blush); padding: clamp(56px, 7vw, 96px) 0 clamp(80px, 9vw, 120px); overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+  .hero h1 { font-size: clamp(2.9rem, 6.4vw, 5rem); letter-spacing: -.01em; }
+  .hero h1 .script { font-style: italic; font-weight: 500; }
+  .hero .texto { margin: 24px 0 34px; max-width: 32em; color: var(--tinta-suave); font-size: 1.15rem; }
+  .acoes { display: flex; gap: 14px; flex-wrap: wrap; }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+  .chips span { background: #fff; border-radius: 999px; padding: 6px 16px; font-size: .9rem; font-weight: 600; color: var(--tinta-suave); }
+  .arco-wrap { position: relative; display: flex; justify-content: center; }
+  .arco { position: relative; width: min(420px, 100%); aspect-ratio: 4 / 5; border-radius: 999px 999px 32px 32px; background: #fff; border: 10px solid var(--blush-forte); box-shadow: 0 40px 80px -40px rgba(161, 43, 125, .5); display: grid; place-items: center; }
+  .arco img { width: 78%; }
+  .flutua { position: absolute; background: #fff; box-shadow: var(--sombra-leve); }
+  .flutua.card { left: -34px; bottom: 56px; border-radius: 20px; padding: 14px 18px; display: flex; gap: 12px; align-items: center; }
+  .flutua.card .ic { width: 42px; height: 42px; border-radius: 50%; background: var(--blush); color: var(--rose-escuro); display: grid; place-items: center; }
+  .flutua.card strong { display: block; font-size: .95rem; line-height: 1.3; }
+  .flutua.card small { color: var(--tinta-suave); font-size: .82rem; }
+  .flutua.fita { right: -22px; top: 64px; border-radius: 999px; padding: 8px 20px; font-family: var(--script); font-size: 1rem; font-weight: 600; color: var(--rose-escuro); rotate: 4deg; }
 
-  /* Destaques */
-  .destaques { padding: 0; }
-  .destaques-grid { position: relative; margin-top: -44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .destaque-item { background: var(--branco); border-radius: var(--raio); padding: 28px 26px; box-shadow: var(--sombra-leve); display: flex; gap: 16px; align-items: flex-start; }
-  .icone { flex: none; width: 52px; height: 52px; border-radius: 50%; background: var(--blush); display: grid; place-items: center; }
-  .icone svg { width: 24px; height: 24px; stroke: var(--rose-escuro); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .destaque-item h3 { font-size: 1.32rem; margin-bottom: 2px; }
-  .destaque-item p { font-size: .95rem; color: var(--tinta-suave); line-height: 1.55; }
+  /* Faixa corrida */
+  .marquee { background: var(--tinta); color: #fff; overflow: hidden; padding: 18px 0; }
+  .marquee-trilho { display: flex; width: max-content; gap: 40px; animation: correr 32s linear infinite; font-family: var(--serif); font-style: italic; font-size: 1.6rem; white-space: nowrap; }
+  .marquee-trilho span.ponto { color: var(--rose-claro); }
+  @keyframes correr { to { transform: translateX(-50%); } }
 
   /* Sobre */
-  .sobre-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(40px, 6vw, 84px); align-items: center; }
-  .sobre p { color: var(--tinta-suave); margin-bottom: 14px; }
-  .carta { position: relative; background: var(--branco); border-radius: var(--raio); padding: clamp(36px, 5vw, 56px); box-shadow: var(--sombra); transform: rotate(-1.6deg); }
-  .carta::before { content: ""; position: absolute; top: -14px; left: 50%; width: 110px; height: 30px; transform: translateX(-50%) rotate(2deg); background: rgba(240, 169, 212, .55); border-radius: 4px; }
-  .carta blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.5rem, 2.6vw, 1.95rem); line-height: 1.4; }
-  .carta .assinatura { margin-top: 22px; font-family: var(--script); font-size: 1.9rem; color: var(--rose-escuro); line-height: 1.2; }
-  .carta .assinatura small { display: block; font-family: var(--sans); font-size: .85rem; color: var(--tinta-suave); }
+  .sobre { padding: clamp(80px, 10vw, 120px) 0; }
+  .g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 6vw, 72px); align-items: center; }
+  .sobre h2 { margin: 4px 0 22px; }
+  .sobre p + p { margin-top: 14px; }
+  .carta { background: #fff; border-radius: 28px; padding: clamp(36px, 5vw, 52px); box-shadow: var(--sombra); rotate: -1.5deg; }
+  .carta blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.35; }
+  .carta figcaption { margin-top: 20px; font-family: var(--script); font-weight: 700; font-size: 1.15rem; color: var(--rose-escuro); line-height: 1.2; }
+  .carta figcaption small { display: block; font-family: var(--sans); font-size: .85rem; color: var(--tinta-suave); }
 
   /* Serviços */
-  .servicos { background: var(--branco); border-radius: 48px 48px 0 0; }
-  .servicos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-  .servico { background: var(--blush); border-radius: var(--raio); padding: clamp(30px, 4vw, 44px); display: flex; flex-direction: column; align-items: flex-start; transition: transform .3s, box-shadow .3s, background .3s; }
-  .servico:hover { transform: translateY(-6px); box-shadow: var(--sombra); background: #fce8f2; }
-  .servico .num { width: 58px; height: 58px; border-radius: 50%; background: var(--branco); display: grid; place-items: center; font-family: var(--script); font-size: 1.9rem; color: var(--rose-escuro); box-shadow: var(--sombra-leve); }
-  .servico h3 { font-size: 1.75rem; margin: 20px 0 10px; }
-  .servico p { color: var(--tinta-suave); margin-bottom: 22px; flex: 1; }
-  .link-seta { font-weight: 700; color: var(--rose-escuro); display: inline-flex; align-items: center; gap: 6px; }
-  .link-seta::after { content: "→"; transition: transform .25s; }
-  .link-seta:hover::after { transform: translateX(5px); }
+  .servicos { background: #fff; border-radius: 56px 56px 0 0; padding: clamp(80px, 10vw, 120px) 0; }
+  .titulo-sec { margin-bottom: 52px; }
+  .g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .servico { background: var(--blush); border-radius: 28px; padding: 40px 36px; display: flex; flex-direction: column; gap: 14px; transition: transform .35s, box-shadow .35s, background .35s; }
+  .servico:hover { transform: translateY(-8px); box-shadow: var(--sombra); background: #f3e4ee; }
+  .servico .num { font-family: var(--serif); font-style: italic; font-size: 4rem; line-height: 1; color: var(--rose-claro); }
+  .servico h3 { font-size: 2rem; }
+  .servico p { color: var(--tinta-suave); flex: 1; }
+  .seta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--rose-escuro); }
+  .seta [data-lucide] { width: 18px; height: 18px; transition: transform .25s; }
+  .seta:hover [data-lucide] { transform: translateX(5px); }
 
-  /* Passos */
-  .como { background: var(--branco); padding-top: 0; }
-  .passos { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 48px; }
-  .passos::before { content: ""; position: absolute; top: 36px; left: 16.66%; right: 16.66%; border-top: 2px dashed var(--rose-claro); }
-  .passo { position: relative; text-align: center; padding: 0 8px; }
-  .passo .bolha { width: 72px; height: 72px; border-radius: 50%; background: var(--rose-escuro); color: var(--branco); display: grid; place-items: center; margin: 0 auto 22px; font-family: var(--script); font-size: 2rem; box-shadow: 0 0 0 8px var(--branco), var(--sombra); }
-  .passo p { color: var(--tinta-suave); margin-top: 6px; }
+  /* Como funciona */
+  .como { background: #fff; padding-bottom: clamp(80px, 10vw, 120px); }
+  .como-caixa { background: var(--blush); color: var(--tinta); border: 1px solid var(--blush-forte); border-radius: 36px; padding: clamp(48px, 6vw, 72px) clamp(28px, 5vw, 64px); }
+  .como-caixa .kicker { color: var(--rose-escuro); }
+  .passos { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 48px; }
+  .passos::before { content: ""; position: absolute; top: 36px; left: 17%; right: 17%; border-top: 2px dashed var(--rose-claro); }
+  .passo { position: relative; text-align: center; }
+  .passo .bolha { width: 72px; height: 72px; border-radius: 50%; background: var(--rose-escuro); display: grid; place-items: center; margin: 0 auto 20px; font-family: var(--script); font-weight: 700; font-size: 1.6rem; color: #fff; box-shadow: 0 0 0 8px var(--blush); }
+  .passo h3 { font-size: 1.75rem; margin-bottom: 6px; }
+  .passo p { color: var(--tinta-suave); }
 
   /* Avaliações */
-  .avaliacoes { background: linear-gradient(180deg, var(--blush) 0%, var(--papel) 100%); border-radius: 48px 48px 0 0; }
-  .avaliacoes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-  .avaliacao { position: relative; background: var(--branco); border-radius: var(--raio); padding: 34px 30px 28px; display: flex; flex-direction: column; box-shadow: var(--sombra-leve); }
-  .avaliacao .estrelas { color: #e7a93c; letter-spacing: .18em; font-size: 1.05rem; margin-bottom: 14px; }
-  .avaliacao blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.28rem; line-height: 1.45; flex: 1; }
-  .avaliacao .autora { margin-top: 24px; display: flex; align-items: center; gap: 12px; }
-  .avaliacao .avatar { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--blush-forte); color: var(--rose-escuro); display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 1.3rem; }
+  .avaliacoes { padding: clamp(80px, 10vw, 120px) 0; }
+  .aval-topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
+  .aval-nav { display: flex; gap: 10px; }
+  .aval-nav button { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--blush-forte); background: #fff; color: var(--rose-escuro); cursor: pointer; display: grid; place-items: center; transition: background .2s, color .2s, border-color .2s; }
+  .aval-nav button:hover, .aval-nav .prox { background: var(--rose-escuro); border-color: var(--rose-escuro); color: #fff; }
+  .aval-nav button.swiper-button-disabled { opacity: .4; cursor: default; }
+  .swiper { padding: 10px 6px 56px !important; }
+  .swiper-slide { height: auto; }
+  .avaliacao { position: relative; height: 100%; background: #fff; border-radius: 28px; padding: 40px 34px 30px; box-shadow: var(--sombra-leve); display: flex; flex-direction: column; }
+  .avaliacao .estrelas { color: #c2449a; letter-spacing: .2em; font-size: 1.1rem; }
+  .avaliacao blockquote { margin: 16px 0 24px; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.4rem; line-height: 1.45; flex: 1; }
+  .avaliacao .autora { display: flex; align-items: center; gap: 12px; }
+  .avaliacao .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--blush-forte); color: var(--rose-escuro); display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 1.35rem; flex: none; }
   .avaliacao .nome { font-weight: 700; line-height: 1.3; }
   .avaliacao .detalhe { font-size: .88rem; color: var(--tinta-suave); line-height: 1.3; }
-  .avaliacao .selo { position: absolute; top: 16px; right: 16px; font-size: .72rem; font-weight: 700; color: var(--rose-escuro); border: 1.5px dashed var(--rose-claro); border-radius: 999px; padding: 2px 12px; }
+  .avaliacao .selo { position: absolute; top: 18px; right: 18px; font-size: .74rem; font-weight: 700; color: var(--rose-escuro); border: 1.5px dashed var(--rose-claro); border-radius: 999px; padding: 2px 12px; }
+  .swiper-pagination-bullet { background: var(--rose-claro); opacity: 1; width: 10px; height: 10px; transition: width .3s; border-radius: 999px; }
+  .swiper-pagination-bullet-active { background: var(--rose-escuro); width: 28px; }
 
   /* Dúvidas */
-  .faq-caixa { max-width: 800px; }
+  .duvidas { background: #fff; border-radius: 56px 56px 0 0; padding: clamp(80px, 10vw, 120px) 0; }
+  .faq { width: min(860px, 100% - 40px); margin-inline: auto; }
   .faq-lista { display: grid; gap: 14px; margin-top: 40px; }
-  .faq details { background: var(--branco); border-radius: 20px; box-shadow: var(--sombra-leve); transition: box-shadow .25s; }
-  .faq details[open] { box-shadow: var(--sombra); }
-  .faq summary { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; padding: 20px 64px 20px 26px; cursor: pointer; list-style: none; position: relative; border-radius: 20px; }
+  .faq details { background: var(--blush); border-radius: 22px; overflow: hidden; }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 26px; font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; position: absolute; right: 18px; top: 50%; width: 34px; height: 34px; margin-top: -17px; border-radius: 50%; background: var(--blush); color: var(--rose-escuro); display: grid; place-items: center; font-family: var(--sans); font-size: 1.3rem; transition: transform .25s, background .25s; }
-  .faq details[open] summary::after { transform: rotate(45deg); background: var(--blush-forte); }
-  .faq details p { color: var(--tinta-suave); padding: 0 26px 24px; }
+  .faq summary .sinal { flex: none; width: 36px; height: 36px; border-radius: 50%; background: #fff; color: var(--rose-escuro); display: grid; place-items: center; transition: transform .3s; }
+  .faq details[open] summary .sinal { transform: rotate(45deg); }
+  .faq .resposta { padding: 0 26px 24px; color: var(--tinta-suave); }
 
   /* Agendamento */
-  .agendar { position: relative; overflow: hidden; background: linear-gradient(160deg, #fbe6f1 0%, #fdf1ea 100%); border-radius: 48px 48px 0 0; }
-  .agendar-grid { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(36px, 6vw, 76px); align-items: start; }
-  .agendar .intro { color: var(--tinta-suave); }
-  .info { margin-top: 30px; display: grid; gap: 12px; }
-  .info div { display: flex; gap: 14px; align-items: center; background: rgba(255, 255, 255, .7); border-radius: 18px; padding: 12px 16px; }
-  .info .icone { width: 44px; height: 44px; background: var(--branco); }
-  .info .icone svg { width: 20px; height: 20px; }
-  .info dt { font-size: .82rem; font-weight: 700; color: var(--rose-escuro); line-height: 1.3; }
-  .info dd { line-height: 1.4; }
-  .endereco-link:hover { text-decoration: underline; text-underline-offset: 3px; }
-  form { background: var(--branco); border-radius: 30px; padding: clamp(26px, 4vw, 44px); box-shadow: var(--sombra); display: grid; gap: 18px; }
-  form .titulo-form { font-family: var(--script); font-size: 2rem; color: var(--rose-escuro); line-height: 1.1; }
+  .agendar { background: var(--blush); padding: clamp(80px, 10vw, 120px) 0; }
+  .agendar .g2 { align-items: start; }
+  .agendar h2 { margin: 4px 0 18px; }
+  .info { display: grid; gap: 12px; margin-top: 28px; }
+  .info-item { display: flex; gap: 14px; align-items: center; background: #fff; border-radius: 20px; padding: 14px 18px; transition: box-shadow .25s, transform .25s; }
+  a.info-item:hover { box-shadow: var(--sombra-leve); transform: translateY(-2px); }
+  .info-item .ic { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--blush); color: var(--rose-escuro); display: grid; place-items: center; }
+  .info-item strong { display: block; font-size: .8rem; color: var(--rose-escuro); line-height: 1.3; }
+  .info-item span { line-height: 1.45; }
+  form { background: #fff; border-radius: 32px; padding: clamp(28px, 4vw, 44px); box-shadow: var(--sombra); display: grid; gap: 18px; }
+  form .script { font-size: 1.6rem; font-weight: 700; line-height: 1.2; letter-spacing: -.01em; }
   .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  label { display: grid; gap: 6px; font-size: .95rem; font-weight: 600; color: var(--tinta); }
-  input, select, textarea { font: 400 1rem var(--sans); color: var(--tinta); padding: 13px 16px; border: 1.5px solid var(--linha); background: var(--papel); width: 100%; border-radius: 14px; transition: border-color .2s, box-shadow .2s, background .2s; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose); background: var(--branco); box-shadow: 0 0 0 4px rgba(194, 68, 154, .14); }
-  /* iPhone: campos de data estouravam a largura do formulário */
-  label, .linha > * { min-width: 0; }
-  input, select, textarea { min-width: 0; max-width: 100%; }
-  input[type="date"] { -webkit-appearance: none; appearance: none; display: block; min-height: 52px; text-align: left; }
+  label { display: grid; gap: 6px; font-weight: 600; font-size: .95rem; min-width: 0; }
+  input, select, textarea { font: 400 1rem var(--sans); color: var(--tinta); padding: 14px 16px; border: 1.5px solid var(--linha); border-radius: 14px; background: var(--papel); width: 100%; min-width: 0; transition: border-color .2s, box-shadow .2s, background .2s; }
+  input[type="date"] { -webkit-appearance: none; appearance: none; display: block; min-height: 54px; text-align: left; }
   input[type="date"]::-webkit-date-and-time-value { text-align: left; }
-  textarea { resize: vertical; min-height: 100px; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--rose); background: #fff; box-shadow: 0 0 0 4px rgba(194, 68, 154, .14); }
+  textarea { resize: vertical; min-height: 104px; }
   form .btn { width: 100%; }
   .nota { font-size: .88rem; color: var(--tinta-suave); text-align: center; }
 
   /* Rodapé */
-  footer.rodape { background: var(--tinta); color: #d5cfd8; padding: 64px 0 26px; font-size: .97rem; }
-  .rodape-grid { display: grid; grid-template-columns: 1.3fr .8fr 1.2fr; gap: 52px; padding-bottom: 44px; }
-  .rodape .logo { color: var(--branco); font-size: 1.9rem; }
+  .rodape { background: var(--tinta); color: #d8d3dd; padding: 64px 0 26px; }
+  .rodape .g3 { gap: 48px; padding-bottom: 40px; }
+  .rodape .logo { color: #fff; }
   .rodape .logo em { color: var(--rose-claro); }
-  .rodape .logo img { height: 76px; width: 76px; padding: 7px; }
-  .rodape .lema { margin-top: 18px; max-width: 26em; }
-  .rodape .ate-breve { font-family: var(--script); font-size: 1.9rem; color: var(--rose-claro); margin-top: 14px; line-height: 1.2; }
-  .rodape h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--branco); margin-bottom: 14px; }
-  .rodape ul { list-style: none; display: grid; gap: 8px; }
-  .rodape ul a:hover { color: var(--branco); text-decoration: underline; text-underline-offset: 3px; }
-  .rodape small { display: block; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 24px; font-size: .85rem; text-align: center; }
+  .rodape .logo img { width: 72px; height: 72px; padding: 6px; }
+  .rodape h4 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 12px; }
+  .rodape ul { list-style: none; display: grid; gap: 6px; }
+  .rodape ul a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  .rodape .ate { font-family: var(--script); font-weight: 600; font-size: 1.2rem; color: var(--rose-claro); margin-top: 12px; }
+  .rodape small { display: block; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 22px; text-align: center; font-size: .85rem; }
 
   .whats { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 60px; height: 60px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0, 0, 0, .25); transition: transform .25s; }
   .whats:hover { transform: scale(1.08) rotate(-6deg); }
   .whats svg { width: 31px; fill: #fff; }
 
-  .js .revela { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
-  .js .revela.visivel { opacity: 1; transform: none; }
-  .js .carta.revela.visivel { transform: rotate(-1.6deg); }
-  @media (prefers-reduced-motion: reduce) {
-    .js .revela { opacity: 1; transform: none; transition: none; }
-    .medalhao::before { animation: none; }
-    html { scroll-behavior: auto; }
-  }
-
   @media (max-width: 900px) {
-    .hero-grid, .sobre-grid, .agendar-grid, .servicos-grid, .avaliacoes-grid, .destaques-grid { grid-template-columns: 1fr; }
+    .hero-grid, .g2, .g3 { grid-template-columns: 1fr; }
     .hero { text-align: center; }
     .hero .texto { margin-inline: auto; }
-    .hero-acoes, .hero .mimo { justify-content: center; }
-    .medalhao { width: min(280px, 70%); margin-top: 26px; }
-    .destaques-grid { margin-top: -36px; gap: 14px; }
-    .passos { grid-template-columns: 1fr; gap: 40px; }
+    .acoes, .chips { justify-content: center; }
+    .arco { width: min(300px, 78%); }
+    .flutua.card { left: -6px; bottom: 30px; }
+    .flutua.fita { right: -6px; top: 40px; font-size: 1.25rem; }
+    .passos { grid-template-columns: 1fr; }
     .passos::before { display: none; }
-    .rodape-grid { grid-template-columns: 1fr; gap: 36px; }
-    .servicos, .avaliacoes, .agendar { border-radius: 32px 32px 0 0; }
-    .hamb { display: block; }
-    .menu { display: none; position: absolute; top: 100%; left: 12px; right: 12px; flex-direction: column; gap: 18px; background: var(--branco); padding: 26px 22px 28px; border-radius: 24px; box-shadow: var(--sombra); }
+    .servicos, .duvidas { border-radius: 34px 34px 0 0; }
+    .hamb { display: inline-flex; }
+    .menu { display: none; position: absolute; top: 100%; left: 12px; right: 12px; flex-direction: column; gap: 18px; background: #fff; border-radius: 24px; padding: 26px 22px; box-shadow: var(--sombra); }
     .menu.aberto { display: flex; }
     .nav { height: 72px; }
-    .logo img { height: 50px; width: 50px; }
+    .logo img { width: 48px; height: 48px; }
   }
   @media (max-width: 520px) {
     .linha { grid-template-columns: 1fr; }
-    .hero-acoes .btn { width: 100%; }
+    .acoes .btn { width: 100%; }
+    .carta { rotate: 0deg; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .marquee-trilho { animation: none; }
   }
 </style>
 </head>
 <body>
 
-<div class="faixa">Agende sua prova pelo WhatsApp: <a id="faixa-whats" target="_blank" rel="noopener" data-loja="telefone"></a></div>
 
 <header class="topo">
-  <div class="container nav">
+  <div class="wrap nav">
     <a href="#topo" class="logo"><img src="logo.png" alt="Logo da AlceNoivas"><span>Alce<em>Noivas</em></span></a>
-    <button class="hamb" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="hamb" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
     <ul class="menu">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
@@ -263,176 +255,156 @@
 <main id="topo">
 
   <section class="hero">
-    <div class="bolha-fundo a"></div>
-    <div class="bolha-fundo b"></div>
-    <div class="container hero-grid">
-      <div class="revela">
-        <p class="ola">Seja bem-vinda!</p>
-        <h1>O vestido que conta a <span class="manuscrito">sua</span> história</h1>
-        <p class="texto">Aqui na AlceNoivas, a gente recebe cada noiva com calma e carinho, cuidando de cada detalhe. Queremos que você encontre aquele vestido que faz o coração dizer “é este”. E vestimos também as madrinhas, o noivo e os padrinhos.</p>
-        <div class="hero-acoes">
-          <a href="#agendar" class="btn">Quero agendar minha prova</a>
-          <a href="#servicos" class="btn suave">Conhecer os serviços</a>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker anima-hero">Seja bem-vinda!</p>
+        <h1 class="anima-hero">O vestido que conta a <span class="script">sua</span> história</h1>
+        <p class="texto anima-hero">Aqui na AlceNoivas, a gente recebe cada noiva com calma e carinho, cuidando de cada detalhe. Queremos que você encontre aquele vestido que faz o coração dizer “é este”. E vestimos também as madrinhas, o noivo e os padrinhos.</p>
+        <div class="acoes anima-hero">
+          <a href="#agendar" class="btn">Quero agendar minha prova <i data-lucide="arrow-right"></i></a>
+          <a href="#servicos" class="btn claro">Conhecer os serviços</a>
         </div>
-        <p class="mimo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg>Noivas · Madrinhas · Ternos</p>
+        <div class="chips anima-hero"><span>Vestidos de noiva</span><span>Madrinhas</span><span>Ternos</span></div>
       </div>
-      <div class="medalhao revela">
-        <img src="logo.png" alt="AlceNoivas: casal de noivos sobre uma coroa">
-        <span class="fita">feito com carinho</span>
+      <div class="arco-wrap">
+        <div class="arco anima-arco">
+          <img src="logo.png" alt="AlceNoivas: casal de noivos sobre uma coroa">
+          <div class="flutua card anima-flutua"><span class="ic"><i data-lucide="clock"></i></span><span><strong>Prova sem pressa</strong><small>Horário só seu</small></span></div>
+          <div class="flutua fita anima-flutua">feito com carinho</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="destaques" aria-label="Diferenciais">
-    <div class="container">
-      <div class="destaques-grid revela">
-        <div class="destaque-item">
-          <div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg></div>
-          <div><h3>Atendimento individual</h3><p>Um horário reservado só para você.</p></div>
-        </div>
-        <div class="destaque-item">
-          <div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500V12l3 2"/></svg></div>
-          <div><h3>Prova sem pressa</h3><p>Experimente com calma, ao lado de quem você ama.</p></div>
-        </div>
-        <div class="destaque-item">
-          <div class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="13.500" r="5.500"/><circle cx="15" cy="13.500" r="5.500"/><path d="M10.500 5.500 12 4l1.500 1.500"/></svg></div>
-          <div><h3>Tudo em um só lugar</h3><p>Noiva, madrinhas, noivo e padrinhos.</p></div>
-        </div>
-      </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-trilho">
+      <span>Vestidos de noiva</span><span class="ponto">·</span><span>Vestidos de madrinha</span><span class="ponto">·</span><span>Ternos masculinos</span><span class="ponto">·</span><span>Prova sem pressa</span><span class="ponto">·</span>
+      <span>Vestidos de noiva</span><span class="ponto">·</span><span>Vestidos de madrinha</span><span class="ponto">·</span><span>Ternos masculinos</span><span class="ponto">·</span><span>Prova sem pressa</span><span class="ponto">·</span>
     </div>
-  </section>
+  </div>
 
   <section class="sobre" id="sobre">
-    <div class="container sobre-grid">
+    <div class="wrap g2">
       <div class="revela">
-        <p class="sobretitulo">Nossa história</p>
+        <p class="kicker">Nossa história</p>
         <h2>Feito com as mãos, pensado com o coração</h2>
-        <div class="ornamento" aria-hidden="true">♡</div>
-        <p>A AlceNoivas nasceu do amor por vestir noivas. Aqui, o atendimento é pessoal: ouvimos seus sonhos, entendemos o estilo da sua cerimônia e acompanhamos você em cada prova, do primeiro encontro ao grande dia.</p>
-        <p>Para a gente, o vestido certo não é só o mais bonito. É aquele que faz você se sentir você mesma, na sua versão mais radiante.</p>
+        <p class="muted">A AlceNoivas nasceu do amor por vestir noivas. Aqui, o atendimento é pessoal: ouvimos seus sonhos, entendemos o estilo da sua cerimônia e acompanhamos você em cada prova, do primeiro encontro ao grande dia.</p>
+        <p class="muted">Para a gente, o vestido certo não é só o mais bonito. É aquele que faz você se sentir você mesma, na sua versão mais radiante.</p>
       </div>
-      <div class="carta revela">
+      <figure class="carta revela">
         <blockquote>“Toda noiva merece viver o momento de se olhar no espelho e se emocionar.”</blockquote>
-        <p class="assinatura">Com carinho,<small>Equipe AlceNoivas</small></p>
-      </div>
+        <figcaption>Com carinho,<small>Equipe AlceNoivas</small></figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="servicos" id="servicos">
-    <div class="container">
-      <div class="centro revela">
-        <p class="sobretitulo">O que fazemos</p>
+    <div class="wrap">
+      <div class="centro titulo-sec revela">
+        <p class="kicker">O que fazemos</p>
         <h2>Para a noiva e para quem está ao lado dela</h2>
-        <div class="ornamento" aria-hidden="true">♡</div>
       </div>
-      <div class="servicos-grid">
-        <article class="servico revela">
-          <span class="num">1</span>
+      <div class="g3 grupo">
+        <article class="servico revela-item">
+          <span class="num">01</span>
           <h3>Vestidos de noiva</h3>
           <p>Uma seleção de modelos em diferentes estilos, tecidos e silhuetas para você provar com calma.</p>
-          <a href="#agendar" class="link-seta">Agendar prova</a>
+          <a href="#agendar" class="seta">Agendar prova <i data-lucide="arrow-right"></i></a>
         </article>
-        <article class="servico revela">
-          <span class="num">2</span>
+        <article class="servico revela-item">
+          <span class="num">02</span>
           <h3>Vestidos de madrinha</h3>
           <p>Opções para vestir com elegância quem estará ao seu lado no altar.</p>
-          <a href="#agendar" class="link-seta">Agendar prova</a>
+          <a href="#agendar" class="seta">Agendar prova <i data-lucide="arrow-right"></i></a>
         </article>
-        <article class="servico revela">
-          <span class="num">3</span>
+        <article class="servico revela-item">
+          <span class="num">03</span>
           <h3>Ternos masculinos</h3>
           <p>Ternos para o noivo e os padrinhos, com caimento impecável.</p>
-          <a href="#agendar" class="link-seta">Agendar prova</a>
+          <a href="#agendar" class="seta">Agendar prova <i data-lucide="arrow-right"></i></a>
         </article>
       </div>
     </div>
   </section>
 
   <section class="como" id="como-funciona">
-    <div class="container">
-      <div class="centro revela">
-        <p class="sobretitulo">Como funciona</p>
-        <h2>Do primeiro encontro ao altar</h2>
-        <div class="ornamento" aria-hidden="true">♡</div>
-      </div>
-      <div class="passos">
-        <div class="passo revela"><div class="bolha">1</div><h3>Agende sua visita</h3><p>Escolha o melhor dia e horário e conte um pouco sobre o seu casamento.</p></div>
-        <div class="passo revela"><div class="bolha">2</div><h3>Prove com calma</h3><p>Experimente os modelos que combinam com você, com toda a nossa atenção.</p></div>
-        <div class="passo revela"><div class="bolha">3</div><h3>Pronto para o grande dia</h3><p>Com a escolha feita, combinamos todos os detalhes até a data do casamento.</p></div>
+    <div class="wrap">
+      <div class="como-caixa revela">
+        <div class="centro">
+          <p class="kicker">Como funciona</p>
+          <h2>Do primeiro encontro ao altar</h2>
+        </div>
+        <div class="passos grupo">
+          <div class="passo revela-item"><div class="bolha">1</div><h3>Agende sua visita</h3><p>Escolha o melhor dia e horário e conte um pouco sobre o seu casamento.</p></div>
+          <div class="passo revela-item"><div class="bolha">2</div><h3>Prove com calma</h3><p>Experimente os modelos que combinam com você, com toda a nossa atenção.</p></div>
+          <div class="passo revela-item"><div class="bolha">3</div><h3>Pronto para o grande dia</h3><p>Com a escolha feita, combinamos todos os detalhes até a data do casamento.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- AVALIAÇÕES — os textos vêm da lista AVALIACOES, no fim do arquivo -->
   <section class="avaliacoes" id="avaliacoes">
-    <div class="container">
-      <div class="centro revela">
-        <p class="sobretitulo">Quem já passou por aqui</p>
-        <h2>O que dizem nossas clientes</h2>
-        <div class="ornamento" aria-hidden="true">♡</div>
+    <div class="wrap">
+      <div class="aval-topo revela">
+        <div>
+          <p class="kicker">Quem já passou por aqui</p>
+          <h2>O que dizem nossas clientes</h2>
+        </div>
+        <div class="aval-nav">
+          <button type="button" class="ant" aria-label="Avaliação anterior"><i data-lucide="arrow-left"></i></button>
+          <button type="button" class="prox" aria-label="Próxima avaliação"><i data-lucide="arrow-right"></i></button>
+        </div>
       </div>
-      <div class="avaliacoes-grid revela" id="lista-avaliacoes"></div>
+      <div class="swiper revela">
+        <div class="swiper-wrapper" id="lista-avaliacoes"></div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </section>
 
-  <!-- PERGUNTAS FREQUENTES — respostas provisórias: revisar com a loja antes de publicar -->
-  <section class="faq" id="duvidas">
-    <div class="container faq-caixa">
+  <!-- PERGUNTAS FREQUENTES: respostas provisórias, revisar com a loja -->
+  <section class="duvidas" id="duvidas">
+    <div class="faq">
       <div class="centro revela">
-        <p class="sobretitulo">Ficou com dúvida?</p>
+        <p class="kicker">Ficou com dúvida?</p>
         <h2>Antes da sua visita</h2>
-        <div class="ornamento" aria-hidden="true">♡</div>
       </div>
-      <div class="faq-lista revela">
-        <details>
-          <summary>Preciso agendar horário?</summary>
-          <p>Recomendamos agendar, assim reservamos um tempo só para você e conseguimos atender com calma. É só enviar uma mensagem pelo WhatsApp.</p>
+      <div class="faq-lista grupo">
+        <details class="revela-item" open>
+          <summary>Preciso agendar horário? <span class="sinal"><i data-lucide="plus"></i></span></summary>
+          <p class="resposta">Recomendamos agendar, assim reservamos um tempo só para você e conseguimos atender com calma. É só enviar uma mensagem pelo WhatsApp.</p>
         </details>
-        <details>
-          <summary>Com quanta antecedência devo procurar o vestido?</summary>
-          <p>Quanto antes, melhor: assim você escolhe sem pressa. Conte para a gente a data do casamento e orientamos sobre os prazos.</p>
+        <details class="revela-item">
+          <summary>Com quanta antecedência devo procurar o vestido? <span class="sinal"><i data-lucide="plus"></i></span></summary>
+          <p class="resposta">Quanto antes, melhor: assim você escolhe sem pressa. Conte para a gente a data do casamento e orientamos sobre os prazos.</p>
         </details>
-        <details>
-          <summary>Posso levar acompanhantes na prova?</summary>
-          <p>Claro! Esse é um momento para viver com quem você ama. Avise no agendamento quantas pessoas vêm com você.</p>
+        <details class="revela-item">
+          <summary>Posso levar acompanhantes na prova? <span class="sinal"><i data-lucide="plus"></i></span></summary>
+          <p class="resposta">Claro! Esse é um momento para viver com quem você ama. Avise no agendamento quantas pessoas vêm com você.</p>
         </details>
-        <details>
-          <summary>Vocês atendem também madrinhas, noivo e padrinhos?</summary>
-          <p>Sim. Além dos vestidos de noiva, temos vestidos de madrinha e ternos masculinos. Dá para agendar todo mundo pelo mesmo WhatsApp.</p>
+        <details class="revela-item">
+          <summary>Vocês atendem também madrinhas, noivo e padrinhos? <span class="sinal"><i data-lucide="plus"></i></span></summary>
+          <p class="resposta">Sim. Além dos vestidos de noiva, temos vestidos de madrinha e ternos masculinos. Dá para agendar todo mundo pelo mesmo WhatsApp.</p>
         </details>
       </div>
     </div>
   </section>
 
   <section class="agendar" id="agendar">
-    <div class="bolha-fundo a"></div>
-    <div class="container agendar-grid">
+    <div class="wrap g2">
       <div class="revela">
-        <p class="sobretitulo">Vamos conversar?</p>
+        <p class="kicker">Vamos conversar?</p>
         <h2>Venha viver esse momento</h2>
-        <div class="ornamento" aria-hidden="true">♡</div>
-        <p class="intro">Preencha o formulário e sua mensagem chega direto no nosso WhatsApp. A gente responde para confirmar o horário da sua prova.</p>
-        <dl class="info">
-          <div>
-            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.500-5.600-6.500-11a6.500 6.500 0 0 1 13 0c0 5.400-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.300"/></svg></span>
-            <span><dt>Endereço</dt><dd data-loja="endereco"></dd></span>
-          </div>
-          <div>
-            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.500"/><path d="M12 7.500V12l3 2"/></svg></span>
-            <span><dt>Horário</dt><dd data-loja="horario"></dd></span>
-          </div>
-          <div>
-            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.500 4h3l1.500 4-2 1.500a11 11 0 0 0 5.500 5.500l1.500-2 4 1.500v3a2 2 0 0 1-2 2A15 15 0 0 1 4.500 6a2 2 0 0 1 2-2z"/></svg></span>
-            <span><dt>Telefone / WhatsApp</dt><dd data-loja="telefone"></dd></span>
-          </div>
-          <div>
-            <span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.500"/><circle cx="12" cy="12" r="3.600"/><circle cx="16.700" cy="7.300" r=".6"/></svg></span>
-            <span><dt>Instagram</dt><dd><a data-loja="instagram" target="_blank" rel="noopener"></a></dd></span>
-          </div>
-        </dl>
+        <p class="muted">Preencha o formulário e sua mensagem chega direto no nosso WhatsApp. A gente responde para confirmar o horário da sua prova.</p>
+        <div class="info">
+          <a class="info-item js-mapa" target="_blank" rel="noopener"><span class="ic"><i data-lucide="map-pin"></i></span><span><strong>Endereço</strong><span data-loja="endereco"></span></span></a>
+          <div class="info-item"><span class="ic"><i data-lucide="clock"></i></span><span><strong>Horário</strong><span data-loja="horario"></span></span></div>
+          <a class="info-item js-whats" target="_blank" rel="noopener"><span class="ic"><i data-lucide="phone"></i></span><span><strong>Telefone / WhatsApp</strong><span data-loja="telefone"></span></span></a>
+          <a class="info-item js-insta" target="_blank" rel="noopener"><span class="ic"><i data-lucide="instagram"></i></span><span><strong>Instagram</strong><span data-loja="instagram"></span></span></a>
+        </div>
       </div>
       <form id="form-agendar" class="revela">
-        <p class="titulo-form">Conte para a gente</p>
+        <p class="script">Conte para a gente</p>
         <div class="linha">
           <label>Como você se chama?<input type="text" name="nome" required autocomplete="name" placeholder="Seu nome"></label>
           <label>Seu WhatsApp<input type="tel" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
@@ -442,12 +414,10 @@
           <label>Quando quer vir provar?<input type="date" name="prova"></label>
         </div>
         <label>O que você procura?
-          <select name="interesse">
-            <option>Vestido de noiva</option><option>Vestido de madrinha</option><option>Terno masculino</option><option>Mais de uma opção</option>
-          </select>
+          <select name="interesse"><option>Vestido de noiva</option><option>Vestido de madrinha</option><option>Terno masculino</option><option>Mais de uma opção</option></select>
         </label>
         <label>Quer contar mais alguma coisa?<textarea name="mensagem" placeholder="Conte um pouco sobre o seu sonho..."></textarea></label>
-        <button type="submit" class="btn">Enviar pelo WhatsApp</button>
+        <button type="submit" class="btn">Enviar pelo WhatsApp <i data-lucide="send"></i></button>
         <p class="nota">Ao enviar, o WhatsApp abre com a sua mensagem pronta.</p>
       </form>
     </div>
@@ -455,13 +425,13 @@
 
 </main>
 
-<footer class="rodape">
-  <div class="container">
-    <div class="rodape-grid">
+<footer class="rodape escuro">
+  <div class="wrap">
+    <div class="g3">
       <div>
         <a href="#topo" class="logo"><img src="logo.png" alt="" loading="lazy"><span>Alce<em>Noivas</em></span></a>
-        <p class="lema">Vestidos de noiva, vestidos de madrinha e ternos masculinos, com atendimento feito com calma e carinho.</p>
-        <p class="ate-breve">Esperamos você!</p>
+        <p style="margin-top:16px">Vestidos de noiva, vestidos de madrinha e ternos masculinos, com atendimento feito com calma e carinho.</p>
+        <p class="ate">Esperamos você!</p>
       </div>
       <div>
         <h4>Navegação</h4>
@@ -477,10 +447,10 @@
       <div>
         <h4>Contato</h4>
         <ul>
-          <li data-loja="telefone"></li>
-          <li data-loja="endereco"></li>
+          <li><a class="js-whats" target="_blank" rel="noopener" data-loja="telefone"></a></li>
+          <li><a class="js-mapa" target="_blank" rel="noopener" data-loja="endereco"></a></li>
           <li data-loja="horario"></li>
-          <li><a data-loja="instagram" target="_blank" rel="noopener"></a></li>
+          <li><a class="js-insta" target="_blank" rel="noopener" data-loja="instagram"></a></li>
         </ul>
       </div>
     </div>
@@ -488,14 +458,20 @@
   </div>
 </footer>
 
-<a class="whats" id="whats-flutuante" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-2-1.200 7.400 7.400 0 0 1-1.400-1.700c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.900 2.900 0 0 0-.9 2.100 5 5 0 0 0 1.100 2.700 11.500 11.500 0 0 0 4.400 3.900c.6.300 1.100.400 1.500.500a3.600 3.600 0 0 0 1.600.100 2.700 2.700 0 0 0 1.800-1.200 2.200 2.200 0 0 0 .100-1.200c0-.100-.200-.200-.500-.300z"/></svg>
+<a class="whats js-whats" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.1 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.4 1.5.5a3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>
 </a>
+
+<!-- Bibliotecas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/lucide@0.408.0/dist/umd/lucide.min.js"></script>
 
 <script>
   /* ============================================================
-     DADOS DA LOJA — edite aqui com as informações reais.
-     whatsapp: só números, com 55 + DDD (ex.: 5511999998888)
+     DADOS DA LOJA: edite aqui com as informações reais.
+     whatsapp: só números, com 55 + DDD
      ============================================================ */
   const LOJA = {
     whatsapp: "5511966511005",
@@ -506,77 +482,62 @@
   };
 
   /* ============================================================
-     AVALIAÇÕES — troque pelos depoimentos reais das clientes.
-     Enquanto "exemplo" for true, o cartão mostra o selo "Exemplo".
-     Ao colocar um depoimento real, mude para exemplo: false.
+     AVALIAÇÕES: troque pelos depoimentos reais.
+     Com exemplo: true, o cartão mostra o selo "Exemplo".
      ============================================================ */
   const AVALIACOES = [
     { exemplo: true, estrelas: 5, nome: "Nome da cliente", detalhe: "Noiva · mês/ano do casamento",
       texto: "Aqui entra o depoimento de uma noiva: como foi o atendimento, a prova e a escolha do vestido." },
-    { exemplo: true, estrelas: 5, nome: "Nome da cliente", detalhe: "Noiva · mês/ano do casamento",
-      texto: "Aqui entra o segundo depoimento: o que ela mais gostou e como se sentiu no grande dia." },
+    { exemplo: true, estrelas: 5, nome: "Nome da cliente", detalhe: "Madrinha · mês/ano do casamento",
+      texto: "Aqui entra o depoimento de uma madrinha sobre o vestido e o atendimento." },
     { exemplo: true, estrelas: 5, nome: "Nome do cliente", detalhe: "Noivo · mês/ano do casamento",
-      texto: "Aqui entra o depoimento de um noivo ou padrinho sobre o terno e o atendimento." }
+      texto: "Aqui entra o depoimento de um noivo ou padrinho sobre o terno e o atendimento." },
+    { exemplo: true, estrelas: 5, nome: "Nome da cliente", detalhe: "Noiva · mês/ano do casamento",
+      texto: "Aqui entra mais um depoimento: o que ela mais gostou e como se sentiu no grande dia." }
   ];
 
   const $ = (s) => document.querySelector(s);
-
-  const listaAvaliacoes = $("#lista-avaliacoes");
-  AVALIACOES.forEach((a) => {
-    const cartao = document.createElement("article");
-    cartao.className = "avaliacao";
-    const add = (tag, classe, texto, pai = cartao) => {
-      const el = document.createElement(tag);
-      if (classe) el.className = classe;
-      el.textContent = texto;
-      pai.appendChild(el);
-      return el;
-    };
-    if (a.exemplo) add("span", "selo", "Exemplo");
-    const estrelas = add("div", "estrelas", "★".repeat(a.estrelas));
-    estrelas.setAttribute("aria-label", a.estrelas + " de 5 estrelas");
-    add("blockquote", "", "“" + a.texto + "”");
-    const autora = add("div", "autora", "");
-    add("span", "avatar", a.exemplo ? "♡" : a.nome.trim().charAt(0).toUpperCase(), autora).setAttribute("aria-hidden", "true");
-    const dados = add("div", "", "", autora);
-    add("p", "nome", a.nome, dados);
-    add("p", "detalhe", a.detalhe, dados);
-    listaAvaliacoes.appendChild(cartao);
-  });
-
-  const linkWhats = (texto) => "https://wa.me/" + LOJA.whatsapp + "?text=" + encodeURIComponent(texto);
+  const $$ = (s) => document.querySelectorAll(s);
   const saudacao = "Olá! Gostaria de agendar uma prova na AlceNoivas.";
+  const linkWhats = (t) => "https://wa.me/" + LOJA.whatsapp + "?text=" + encodeURIComponent(t);
 
-  // Preenche os dados da loja em todos os lugares do site
-  document.querySelectorAll("[data-loja]").forEach((el) => {
-    const campo = el.dataset.loja;
-    if (campo === "endereco") {
-      // O endereço vira um link que abre a loja no Google Maps
-      const mapa = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(LOJA.endereco);
-      const link = document.createElement("a");
-      link.href = mapa; link.target = "_blank"; link.rel = "noopener";
-      link.className = "endereco-link";
-      link.textContent = LOJA.endereco;
-      el.textContent = "";
-      el.appendChild(link);
-    } else if (campo === "instagram") {
-      el.textContent = "@" + LOJA.instagram;
-      el.href = "https://instagram.com/" + LOJA.instagram;
-    } else {
-      el.textContent = LOJA[campo];
-    }
+  // Dados da loja
+  $$("[data-loja]").forEach((el) => {
+    const v = LOJA[el.dataset.loja];
+    el.textContent = el.dataset.loja === "instagram" ? "@" + v : v;
   });
+  $$(".js-whats").forEach((a) => (a.href = linkWhats(saudacao)));
+  $$(".js-mapa").forEach((a) => (a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(LOJA.endereco)));
+  $$(".js-insta").forEach((a) => (a.href = "https://instagram.com/" + LOJA.instagram));
   $("#ano").textContent = new Date().getFullYear();
-  $("#whats-flutuante").href = linkWhats(saudacao);
-  $("#faixa-whats").href = linkWhats(saudacao);
 
-  const dataBR = (iso) => iso ? iso.split("-").reverse().join("/") : "";
+  // Avaliações
+  const lista = $("#lista-avaliacoes");
+  AVALIACOES.forEach((a) => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide";
+    const card = document.createElement("article");
+    card.className = "avaliacao";
+    const el = (tag, cls, txt, pai) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; (pai || card).appendChild(e); return e; };
+    if (a.exemplo) el("span", "selo", "Exemplo");
+    el("div", "estrelas", "★".repeat(a.estrelas)).setAttribute("aria-label", a.estrelas + " de 5 estrelas");
+    el("blockquote", "", "“" + a.texto + "”");
+    const autora = el("div", "autora");
+    el("span", "avatar", a.exemplo ? "♡" : a.nome.trim().charAt(0).toUpperCase(), autora).setAttribute("aria-hidden", "true");
+    const d = el("div", "", null, autora);
+    el("p", "nome", a.nome, d);
+    el("p", "detalhe", a.detalhe, d);
+    slide.appendChild(card);
+    lista.appendChild(slide);
+  });
+
+  // Formulário → WhatsApp
+  const dataBR = (iso) => (iso ? iso.split("-").reverse().join("/") : "");
   $("#form-agendar").addEventListener("submit", (e) => {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(e.target));
     const linhas = [
-      saudacao,
-      "",
+      saudacao, "",
       "Nome: " + d.nome,
       "Telefone: " + d.telefone,
       d.casamento ? "Data do casamento: " + dataBR(d.casamento) : null,
@@ -589,28 +550,46 @@
 
   // Menu no celular
   const hamb = $(".hamb"), menu = $(".menu");
-  hamb.addEventListener("click", () => {
-    hamb.setAttribute("aria-expanded", menu.classList.toggle("aberto"));
-  });
-  menu.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") { menu.classList.remove("aberto"); hamb.setAttribute("aria-expanded", "false"); }
-  });
+  hamb.addEventListener("click", () => hamb.setAttribute("aria-expanded", menu.classList.toggle("aberto")));
+  menu.addEventListener("click", (e) => { if (e.target.closest("a")) { menu.classList.remove("aberto"); hamb.setAttribute("aria-expanded", "false"); } });
 
-  // Sombra no cabeçalho ao rolar
-  const cabecalho = $("header.topo");
-  const aoRolar = () => cabecalho.classList.toggle("rolando", window.scrollY > 40);
-  window.addEventListener("scroll", aoRolar, { passive: true });
-  aoRolar();
+  // Cabeçalho ao rolar
+  const topo = $(".topo");
+  const aoRolar = () => topo.classList.toggle("rolando", scrollY > 20);
+  addEventListener("scroll", aoRolar, { passive: true }); aoRolar();
 
-  // Animação de entrada
-  const itens = document.querySelectorAll(".revela");
-  if ("IntersectionObserver" in window) {
-    const obs = new IntersectionObserver((entradas) => {
-      entradas.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visivel"); obs.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    itens.forEach((el) => obs.observe(el));
-  } else {
-    itens.forEach((el) => el.classList.add("visivel"));
+  // Ícones (Lucide)
+  if (window.lucide) lucide.createIcons();
+
+  // Carrossel (Swiper)
+  if (window.Swiper) {
+    new Swiper(".swiper", {
+      slidesPerView: 1.08, spaceBetween: 18, grabCursor: true,
+      navigation: { prevEl: ".aval-nav .ant", nextEl: ".aval-nav .prox" },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      a11y: { prevSlideMessage: "Avaliação anterior", nextSlideMessage: "Próxima avaliação" },
+      breakpoints: { 700: { slidesPerView: 2, spaceBetween: 22 }, 1080: { slidesPerView: 3, spaceBetween: 24 } }
+    });
+  }
+
+  // Animações (GSAP + ScrollTrigger), respeitando quem prefere menos movimento
+  const calmo = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.gsap && window.ScrollTrigger && !calmo) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.timeline({ defaults: { ease: "power3.out" } })
+      .from(".anima-hero", { y: 36, opacity: 0, duration: .9, stagger: .12 })
+      .from(".anima-arco", { scale: .9, opacity: 0, duration: 1.1 }, "-=0.8")
+      .from(".anima-flutua", { y: 20, opacity: 0, duration: .7, stagger: .15 }, "-=0.5");
+    gsap.to(".flutua.card", { y: -10, duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: -1 });
+    gsap.to(".flutua.fita", { y: 8, duration: 3.1, ease: "sine.inOut", yoyo: true, repeat: -1 });
+    gsap.to(".arco img", { y: -24, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+
+    gsap.utils.toArray(".revela").forEach((el) => {
+      gsap.from(el, { y: 40, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" } });
+    });
+    gsap.utils.toArray(".grupo").forEach((g) => {
+      gsap.from(g.querySelectorAll(".revela-item"), { y: 40, opacity: 0, duration: .8, stagger: .14, ease: "power3.out", scrollTrigger: { trigger: g, start: "top 85%" } });
+    });
   }
 </script>
 </body>
